@@ -7,9 +7,11 @@ class FavoritesModel extends \W\Model\Model {
 
 //insert Fav
 	public function ajouterFav($user, $place){
-
+		$this->setPrimaryKey("users_us_id");
 		$data = array("users_us_id" =>$user, "places_pl_id" =>$place);
+		
 		$this->insert($data);
+
 		return "favoris enregistré";
 	}
 
@@ -17,14 +19,15 @@ class FavoritesModel extends \W\Model\Model {
 	public function selectFav(){
 
 		$data = array("places_pl_id" =>$place, "users_us_id" =>$user);
+
 		return $this->findAll($data);
 	}
 
 //delete fav
-	public function deleteFav($user, $place){
-		
-		$data = array("users_us_id" =>$user, "places_pl_id" =>$place);
-		return $this->delete($data);
+	public function deleteFav($idUser, $idFav){
+		$this->setPrimaryKey("users_us_id");
+
+		return $this->deleteFavoris($idUser, $idFav);
 	}
 
 }

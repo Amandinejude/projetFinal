@@ -1,4 +1,4 @@
-<?php 
+<?php  
 
 namespace Controller;
 
@@ -12,29 +12,30 @@ class FavoritesController extends Controller{
 		
 		$ajout = new FavoritesModel(); 
 	
-		$ajout->ajouterFav(13, 28); 
+		$ajout->ajouterFav(14, 44); 
 	
 		$this->show('default/home');
 	}
-//delete FAV
-	public function delFav(){
-	
-		$del = new FavoritesModel(); 
-		
-		$del->deleteFav(1, 9);
-	
-		$this->show('default/home');
-	}
+
 //select FAV
 	public 	function showFav(){
 		$select = new FavoritesModel(); 
 		
-		$retour = $select->selectFav(11);
+		$retour = $select->selectFav(14);
 		print_r($retour);
 		die();
 			$this->show('default/home');
 	}
 
+//delete FAV
+	public function delFav(){
+	
+		$del = new FavoritesModel(); 
+		
+		$del->deleteFav(14);
+	
+		$this->show('default/home');
+	}
 }
 
 ?>
