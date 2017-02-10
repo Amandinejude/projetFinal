@@ -12,8 +12,7 @@ class PlacesController extends Controller{
 		
 		$ajout = new  PlacesModel(); 
 	
-		$ajout->ajouterPlace("Café test", "2458745896", "test test", "Paris", "14", "http://test.fr", "@test", "cheminimage", "1"
-			//$_POST["place"], $_POST['tel'], $_POST['address'], $_POST['city'], $_POST['website'], $_POST['instagram'], $_POST['picture']
+		$ajout->ajouterPlace($_POST["place"], $_POST['tel'], $_POST['address'], $_POST['city'], $_POST['website'], $_POST['instagram'], $_POST['picture']
 			); 
 	
 		$this->show('default/home');
@@ -24,9 +23,8 @@ class PlacesController extends Controller{
 	
 		$up = new PlacesModel(); 
 		
-		$up->updatePlace(11,"testupdate", "7896541231", "update", "Paris", "11", "http://update.com", "@update", "update");
-			//$id, $_POST["place"], $_POST['tel'], $_POST['address'], $_POST['city'], $_POST['district'], $_POST['website'], $_POST['instagram'], $_POST['picturePlace']
-			
+		$up->updatePlace($id, $_POST["place"], $_POST['tel'], $_POST['address'], $_POST['city'], $_POST['district'], $_POST['website'], $_POST['instagram'], $_POST['picturePlace']);
+			 
 	
 		$this->show('default/home'); 
 	}

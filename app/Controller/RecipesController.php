@@ -8,8 +8,7 @@ class RecipesController extends Controller{
 		
 		$ajout = new RecipesModel(); 
 	
-		$ajout->ajouterRecipe("recipeTEST", "testIMGTEST"
-			//$_POST['recipe'], $_POST['pictureRecipe']
+		$ajout->ajouterRecipe($_POST['recipe'], $_POST['pictureRecipe']
 			); 
 	
 		$this->show('default/home');
