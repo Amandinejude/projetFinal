@@ -15,6 +15,7 @@ W est un framework minimaliste. Il suit les structures et les grand thèmes des 
 
 2. Naviguez vers http://localhost/nom_de_mon_projet/docs/tuto/
 
+Ma bite
 
 ####Auteurs :
 * Guillaume Sylvestre : [@gsylvestre](https://github.com/gsylvestre) (auteur original)
