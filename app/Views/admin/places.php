@@ -37,23 +37,23 @@ require('layouts/top.php');?>
         <th>Recettes</th>
     </tr>
 
-    <?php foreach ($places as $places) { ?>
+    <?php foreach ($places as $place) { ?>
 
      <tr>
-        <td><?php echo $places['pl_id'];?></td>
-        <td><?php echo $places['pl_name'];?></td>
-        <td><?php echo $places['pl_tel'];?></td>
-        <td><?php echo $places['pl_address'];?></td>
-        <td><?php echo $places['pl_city'];?></td>
-        <td><?php echo $places['pl_district'];?></td>
-        <td><?php echo $places['pl_website'];?></td>
-        <td><?php echo $places['pl_instagram'];?></td>
-        <td><?php echo $places['pl_picture'];?></td>
+        <td><?php echo $place['pl_id'];?></td>
+        <td><?php echo $place['pl_name'];?></td>
+        <td><?php echo $place['pl_tel'];?></td>
+        <td><?php echo $place['pl_address'];?></td>
+        <td><?php echo $place['pl_city'];?></td>
+        <td><?php echo $place['pl_district'];?></td>
+        <td><?php echo $place['pl_website'];?></td>
+        <td><?php echo $place['pl_instagram'];?></td>
+        <td><?php echo $place['pl_picture'];?></td>
 
 
-        <td><a href="placesedit.php?id=<?php echo $places->getId()  ;?>">Modifier</a></td>
+        <td><a href="placesedit.php?id=<?php echo $place['pl_id']; ?>">Modifier</a></td>
         <!-- appel au controller qui delete -->
-        <td><a href="abonne-delete.php?id=<?php echo $places->getId() ;?>">Supprimer</a></td>
+        <td><a href="abonne-delete.php?id=<?php echo $place['pl_id']; ?>">Supprimer</a></td>
     </tr>
 
     <?php } ?>

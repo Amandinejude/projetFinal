@@ -39,10 +39,10 @@ class PlacesModel extends \W\Model\Model {
 		return $this->find($id);
 	}
 
-//select 1 lieu précis à afficher
+//select tous les lieux à afficher
 	public function selectAllPlaces(){
 		$this->setPrimaryKey("pl_id");
-		return $this->fetchAll();
+		return $this->findAll();
 	}
 
 //update place

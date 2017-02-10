@@ -48,13 +48,24 @@ class PlacesController extends Controller{
 	$retour = $select->selectPlace(29);
 	$this->show('default/home');
 	}
-	
+
+
 //select ALL PLACES en fonction de la recipe
 	public 	function showPlaces(){
-	$select = new PlacesModel(); 
+		$select = new PlacesModel(); 
+		// 
+		$retour = $select->selectPlaces(4); //id de la recette qui correspond
+		print_r($retour);
+		die();
+		$this->show('default/home');
+	}
 	
-	$retour = $select->selectAllPlaces(); //id de la recette qui correspond
-	$this->show('default/places', ["places" => $retour]);
+//select ALL PLACES pour la partie admin pour pouvoir les modifier
+	public 	function showPlaces(){
+		$select = new PlacesModel(); 
+		// 
+		$retour = $select->selectAllPlaces(); //id de la recette qui correspond
+		$this->show('admin/places', ["places" => $retour]);
 	}
 
 }
