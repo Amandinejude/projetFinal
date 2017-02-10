@@ -39,6 +39,12 @@ class PlacesModel extends \W\Model\Model {
 		return $this->find($id);
 	}
 
+//select 1 lieu précis à afficher
+	public function selectAllPlaces(){
+		$this->setPrimaryKey("pl_id");
+		return $this->fetchAll();
+	}
+
 //update place
 	public function updatePlace($id, $place, $tel, $address, $city, $district, $website, $instagram, $pic){
 		$this->setPrimaryKey("pl_id");

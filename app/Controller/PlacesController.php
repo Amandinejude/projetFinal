@@ -46,8 +46,6 @@ class PlacesController extends Controller{
 	$select = new PlacesModel(); 
 	
 	$retour = $select->selectPlace(29);
-	print_r($retour);
-	die();
 	$this->show('default/home');
 	}
 	
@@ -55,10 +53,8 @@ class PlacesController extends Controller{
 	public 	function showPlaces(){
 	$select = new PlacesModel(); 
 	
-	$retour = $select->selectPlaces(4); //id de la recette qui correspond
-	print_r($retour);
-	die();
-	$this->show('default/home');
+	$retour = $select->selectAllPlaces(); //id de la recette qui correspond
+	$this->show('default/places', ["places" => $retour]);
 	}
 
 }
