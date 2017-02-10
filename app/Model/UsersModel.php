@@ -14,6 +14,7 @@ class UsersModel extends \W\Model\UsersModel {
 			echo 'Cet email a déjà été enregistré !';
 		} //sinon insertion 
 
+		//cryptage mot de passe
 		$hash = new AuthentificationModel();
 		$pwd = $hash->hashPassword($pwd, CRYPT_BLOWFISH);
 	

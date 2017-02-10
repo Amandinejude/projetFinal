@@ -19,7 +19,7 @@ class UsersController extends Controller{
 	public function user(){
 		//créer une nouvelle instance avec 	NEW, on precise le model que l'on appel
 		$ajout = new UsersModel(); 
-	
+	 
 		//on reprend cette meme variable pour preciser la function du model dont on a besoin (new / model / function, on crée le chemin)
 		$ajout->ajouterUser("testhash", "testhash", "newpdw", "new3@hashage.com"
 			//$_POST['name'], $_POST['firstname'], $_POST['pwd'], $_POST['email']
