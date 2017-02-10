@@ -1,5 +1,4 @@
  <?php  
-
 namespace Controller;
 
 use \W\Controller\Controller;
@@ -55,6 +54,16 @@ class RecipesController extends Controller{
 		die();
 		$this->show('default/home');
 	}
+
+//select ALL recipes pour la partie admin pour pouvoir les modifier
+	public 	function showAllRecipes(){
+/*		$select = new RecipesModel();
+		$retour = $select->selectAllRecipes(); */
+		$this->show('default/home');
+		$this->show('admin/recipes', ["recipes" => $retour]);
+	}
+
+
 
 }
 

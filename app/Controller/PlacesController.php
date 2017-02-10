@@ -61,10 +61,10 @@ class PlacesController extends Controller{
 	}
 	
 //select ALL PLACES pour la partie admin pour pouvoir les modifier
-	public 	function showPlaces(){
+	public 	function showAllPlaces(){
 		$select = new PlacesModel(); 
 		// 
-		$retour = $select->selectAllPlaces(); //id de la recette qui correspond
+		$retour = $select->selectAllPlaces(); 
 		$this->show('admin/places', ["places" => $retour]);
 	}
 

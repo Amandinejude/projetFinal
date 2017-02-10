@@ -20,7 +20,7 @@ class RecipesModel extends \W\Model\Model {
 		echo 'bien enregistrée !'
 	}
 
-		
+		 
 //select ALL les recipes de la database
 	public function selectRecipes(){
 
@@ -33,6 +33,12 @@ class RecipesModel extends \W\Model\Model {
 
 		$this->setPrimaryKey("re_id");
 		return $this->find($id); 
+	}
+
+//select toutes les recettes à afficher
+	public function selectAllRecipes(){
+		$this->setPrimaryKey("re_id");
+		return $this->findAll();
 	}
 
 //update recipe
@@ -50,22 +56,5 @@ class RecipesModel extends \W\Model\Model {
 		return $this->delete($id); 
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
  ?>
