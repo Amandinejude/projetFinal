@@ -93,6 +93,6 @@ class AuthentificationModel
 	 */
 	public function hashPassword($plainPassword)
 	{
-		return password_hash($plainPassword, PASSWORD_DEFAULT);
+		return password_hash($plainPassword, CRYPT_BLOWFISH);
 	}
 }

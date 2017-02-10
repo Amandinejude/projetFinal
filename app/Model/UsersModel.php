@@ -1,8 +1,8 @@
 <?php 
 
-namespace Model;
+namespace Model; 
 
-use W\Security\AuthentificationModel;
+use \W\Security\AuthentificationModel;
 
 class UsersModel extends \W\Model\UsersModel {
 
@@ -14,7 +14,9 @@ class UsersModel extends \W\Model\UsersModel {
 			echo 'Cet email a déjà été enregistré !';
 		} //sinon insertion 
 
-		$pwd = hashPassword($pwd, PASSWORD_DEFAULT);
+		$hash = new AuthentificationModel();
+		$pwd = $hash->hashPassword($pwd, CRYPT_BLOWFISH);
+	
 
 		$data = array("us_name" =>$name, "us_firstname" =>$firstname, "us_password" =>$pwd, "us_email" =>$email);
 
