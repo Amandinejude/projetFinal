@@ -59,13 +59,20 @@ class UsersController extends Controller{
 		$this->show('default/home'); 
 	}
 
+
+//login USER
+	public function login(){
+
+		if (empty($_POST['email']) | empty($_POST['pwd'])){
+			return "Vous devez saisir un email et un mot de passe valide !"
+		}else{
+			$log = new UsersModel();
+			$log->logUser($_POST['pwd'], $_POST['email']);
+		}
+
+	}
+
+
 }
-
-
-
-
-
-
-
 
  ?>
