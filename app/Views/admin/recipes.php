@@ -9,15 +9,7 @@ require('layouts/top.php');
 
  ?>
 
- <?php 
-
-//view\places.php
-
-//Page d'accueil du dashbord admin qui affiche l'état de la base de données et qui permet d'ajouter, de modifier ou de supprimer des lieux
-
-require('layouts/top.php');?>
-
-<h2>Places</h2>
+<h2>Recipes</h2>
 
 <p><a href="placesedit.php">Ajouter une recette</a></p>
 <div class="well">
@@ -38,8 +30,8 @@ require('layouts/top.php');?>
     <tr>
         <th>Id</th>
         <th>Nom</th>
-        <th>Steps</th>
         <th>Picture</th>
+        <th>Steps</th>
     </tr>
 
     <?php foreach ($recipes as $recipe) { ?>
@@ -47,8 +39,10 @@ require('layouts/top.php');?>
      <tr>
         <td><?php echo $recipe['re_id'];?></td>
         <td><?php echo $recipe['re_name'];?></td>
-        <td><?php echo $recipe['re_steps'];?></td>
         <td><?php echo $recipe['re_picture'];?></td>
+
+        <td><?php echo $recipe['re_steps'];?></td>        
+
     
 
         <td><a href="placesedit.php?id=<?php echo $recipe['re_id']; ?>">Modifier</a></td>

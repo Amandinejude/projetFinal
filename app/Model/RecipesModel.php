@@ -17,7 +17,6 @@ class RecipesModel extends \W\Model\Model {
 		$data = array("re_name" =>$recipe, "re_picture" =>$pic); 
 
 		return $this->insert($data); 
-		echo 'bien enregistrée !'
 	}
 
 		 

@@ -10,6 +10,7 @@
 
     <nav class="navbar navbar-default">
         <div class="container">
+        <!-- mauvais liens à mettre en url(...) -->
             <a href="../admin/index.php" class="navbar-brand">ADMIN</a>
 
             <ul class="nav navbar-nav">
