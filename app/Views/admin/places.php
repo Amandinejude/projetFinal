@@ -14,7 +14,7 @@ require('layouts/top.php');?>
         <div class="form-group">
             <label>Nom</label>
             <!-- version à utiliser avec la variable $nom correspondante, à checker -->
-			<input type="text" name="nom" class="form-control" value="<?= $pl_name; ?>"/>           
+            <input type="text" name="nom" class="form-control" value="<?= $pl_name; ?>"/>           
 
         </div>
         <button type="submit" class="btn btn-default">Recherchez</button>    
