@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- TOUT EST OK ICI - les liens sont corrects -->
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
@@ -10,14 +11,16 @@
 
     <nav class="navbar navbar-default">
         <div class="container">
-        <!-- mauvais liens à mettre en url(...) -->
-            <a href="../admin/index.php" class="navbar-brand">ADMIN</a>
+    
+            <a href=<?= $this->url('adminHome') ?> class="navbar-brand">ADMIN</a>
 
             <ul class="nav navbar-nav">
-                <li><a href="../admin/places">Places</a></li>
-                <li><a href="../admin/recipes">Recipes</a></li>
+                <!-- lien pour accéder à la page place -->
+                <li><a href=<?= $this->url('adminPlace') ?>>Places</a></li>
+                <!-- lien pour accéder à la page place -->
+                <li><a href=<?= $this->url('adminRecipes') ?>>Recipes</a></li> 
             </ul>
-        </div>
+        </div> 
     </nav>
 
     <div class="container">
