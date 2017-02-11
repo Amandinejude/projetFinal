@@ -38,7 +38,8 @@
 		
 /////////INGREDIENTS
 		['GET|POST', '/Ingredients/ingredient', 'Ingredients#ingredient', 'testIngredient'], //ok
-		['GET|POST', '/Ingredients/showIngredients', 'Ingredients#showIngredients', 'testShowingredients'],//////////ok
+
+		['GET|POST', '/Ingredients/showIngredients', 'Ingredients#showIngredients', 'testShowingredients'],// ok
 
 ////////LOGIN
 		['GET|POST', '/Users/login', 'Users#login', 'testLogin'],
@@ -54,6 +55,5 @@
 
 		// // route pour la page  admin place -> acces au dashboard places
 		['GET|POST', '/admin/recipes', 'Recipes#showAllRecipes', 'adminRecipes'],
-	
-	
+
 	);
