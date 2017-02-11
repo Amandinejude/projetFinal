@@ -68,6 +68,8 @@ input.form-control:focus {
 .open > .dropdown-toggle.btn-primary {
   background-image: none;
 }
+
+
 .btn-primary.disabled,
 .btn-primary[disabled],
 fieldset[disabled] .btn-primary,
@@ -1048,7 +1050,7 @@ footer.footer .copyright p.small {
 }
 .btn {
   border-radius: 0;
-  padding: 12px 18px;
+  padding: 8px 18px;
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 1px;
