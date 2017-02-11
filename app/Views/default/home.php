@@ -1,3 +1,6 @@
+
+<!--<i class="fa fa-heart" aria-hidden="true"></i>-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,20 +66,69 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
-                    </li>
+
+                   
+                    <li><a href="#signIn" data-toggle="modal" data-target="#signIn">Sign In</a></li>                                        
                     <li>
-                        <a class="page-scroll" href="#about">Profil</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Favoris</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#process">Deconnection</a>
+                        <a href="#signUp" data-toggle="modal" data-target="#signUp">Sign Up</a
                     </li>
                 </ul>
+    </nav>
+
+            <div class="modal fade" id="signIn">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">√ó</button>
+                      <h4 class="modal-title">Sign In</h4>
+                    </div>
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
+                      </div>
+                      <p class="text-right"><a href="#">Forgot password?</a></p>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="#" data-dismiss="modal" class="btn">Close</a>
+                      <a href="#" class="btn btn-primary">Log-in</a>
+                    </div>
+                  </div>
+                </div>
             </div>
+            
+
+            <div id="signUp" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Sign up</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Sign up to try our cook and mix app!!!!</p>
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="First Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Last Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email Address">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -111,14 +163,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-        </div>   
-
-       
+        </div>     
     </header>
-    
-    
     <section>
         <div class="container text-center wow fadeIn">
             <div class="row content-row">
@@ -126,10 +172,20 @@
                     <div class="portfolio-filter">
                         <ul id="filters" class="clearfix">
                             <li>
-                                <span class="filter active" data-filter="identity graphic logo web">Recette</span>
+                            <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Recettes<span class="caret"></span>
+                            </button>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="">Recette 1 </a></li>
+                                <li><a href="">Recette 2</a></li>
+                                <li><a href="">Recette 3</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="">Separated link</a></li>
+                              </ul>
+                            </div>
                             </li>
                             <li>
-                                <span class="filter" data-filter="identity">Restaurants</span>
+                                <span class="filter active" data-filter="identity graphic logo web">Restaurants</span>
                             </li>
                             <li>
                                 <span class="filter" data-filter="graphic">Testez</span>
@@ -219,7 +275,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>    
+
+
     <footer class="footer" style="background-image: url('assets/img/bg-footer.jpg')">
         <div class="container text-center">
             <div class="row">
@@ -287,15 +345,20 @@ Le restaurant Le Jules est ouvert tous les jours du lundi au dimanche, de 8h30 √
                                     <strong><a href=" ">2 rue Perr√©e, 75002, Paris</a>
                                     </strong>
                                 </li>
-                                <li>Site:
-                                    <strong><a href="">Visiter</a>
+                                <li><i class="fa fa-external-link-square" aria-hidden="true"></i>
+                                    <strong><a href="">Site</a>
                                     </strong>
                                 </li>
                                 
-                                <li>Instagram:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                <li><i class="fa fa-instagram" aria-hidden="true"></i>
+                                    <strong><a href="http://startbootstrap.com">instagram</a>
                                     </strong>
                                 </li>
+                                
+                                <li><i class="fa fa-heart" aria-hidden="true"></i>
+                                    <strong><a href="http://startbootstrap.com">Ajouter aux favoris</a>
+                                    </strong>
+                                </li>                                    
                             </ul>
                         </div>
                     </div>
@@ -303,6 +366,8 @@ Le restaurant Le Jules est ouvert tous les jours du lundi au dimanche, de 8h30 √
             </div>
         </div>
     </div>
+    
+    
     <!-- Example Modal 3 -->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true" style="background-image: url('assets/img/creative/portfolio/bg-3.jpg')">
         <div class="modal-content">
