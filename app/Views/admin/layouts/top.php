@@ -10,11 +10,12 @@
 
     <nav class="navbar navbar-default">
         <div class="container">
+        <!-- mauvais liens à mettre en url(...) -->
             <a href="../admin/index.php" class="navbar-brand">ADMIN</a>
 
             <ul class="nav navbar-nav">
-                <li><a href="../admin/places.php">Places</a></li>
-                <li><a href="../admin/recipes.php">Recipes</a></li>
+                <li><a href="../admin/places">Places</a></li>
+                <li><a href="../admin/recipes">Recipes</a></li>
             </ul>
         </div>
     </nav>

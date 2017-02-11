@@ -9,17 +9,9 @@ require('layouts/top.php');
 
  ?>
 
- <?php 
+<h2>Recipes</h2>
 
-//view\places.php
-
-//Page d'accueil du dashbord admin qui affiche l'état de la base de données et qui permet d'ajouter, de modifier ou de supprimer des lieux
-
-require('layouts/top.php');?>
-
-<h2>Places</h2>
-
-<p><a href="placesedit.php">Ajouter un endroit</a></p>
+<p><a href="placesedit.php">Ajouter une recette</a></p>
 <div class="well">
     <form>
         <div class="form-group">
@@ -38,15 +30,27 @@ require('layouts/top.php');?>
     <tr>
         <th>Id</th>
         <th>Nom</th>
-        <th>Téléphone</th>
-        <th>Adresse</th>
-        <th>Ville</th>
-        <th>Code Postal</th>
-        <th>Site</th>
-        <th>Instagram</th>
-        <th>Images</th>
-        <th>Recettes</th>
+        <th>Picture</th>
+        <th>Steps</th>
     </tr>
+
+    <?php foreach ($recipes as $recipe) { ?>
+ 
+     <tr>
+        <td><?php echo $recipe['re_id'];?></td>
+        <td><?php echo $recipe['re_name'];?></td>
+        <td><?php echo $recipe['re_picture'];?></td>
+
+        <td><?php echo $recipe['re_steps'];?></td>        
+
+    
+
+        <td><a href="placesedit.php?id=<?php echo $recipe['re_id']; ?>">Modifier</a></td>
+        <!-- appel au controller qui delete -->
+        <td><a href="abonne-delete.php?id=<?php echo $recipe['re_id']; ?>">Supprimer</a></td>
+    </tr>
+
+    <?php } ?>
 
 
 <?php require('layouts/bottom.php'); ?>
