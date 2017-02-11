@@ -39,6 +39,12 @@ class PlacesModel extends \W\Model\Model {
 		return $this->find($id);
 	}
 
+//select tous les lieux à afficher
+	public function selectAllPlaces(){
+		$this->setPrimaryKey("pl_id");
+		return $this->findAll();
+	}
+
 //update place
 	public function updatePlace($id, $place, $tel, $address, $city, $district, $website, $instagram, $pic){
 		$this->setPrimaryKey("pl_id");
@@ -53,11 +59,16 @@ class PlacesModel extends \W\Model\Model {
 		return $this->delete($id);
 	}
 
+//research place
 
-}
+	public function searchPlace($search){
+	 	$search =array("pl_name"=>$search);
+        return $this->search($search);
+
+	}
  
 
-
+}
 
 
 

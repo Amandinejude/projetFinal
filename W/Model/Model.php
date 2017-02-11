@@ -264,6 +264,29 @@ abstract class Model
 		return $sth->execute();
 	}
 
+
+	/**
+	 * Effacer les 2 keys de favoris
+	 * @param mixed $id L'identifiant de la ligne à effacer
+	 * @return mixed La valeur de retour de la méthode execute()
+	 */
+	public function deleteFavoris($idUser, $idPlace)
+	{
+		if (!is_numeric($idUser) && !is_numeric($idFav)){
+			return false;
+		}
+
+		$sql = 'DELETE FROM `favorites` WHERE `users_us_id`= :idUser AND `places_pl_id`= :idPlace';
+
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':idUser', $idUser);
+		$sth->bindValue(':idPlace', $idPlace);
+		return $sth->execute();
+	}
+
+
+
 	/**
 	 * Ajoute une ligne
 	 * @param array $data Un tableau associatif de valeurs à insérer
