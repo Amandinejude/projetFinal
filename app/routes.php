@@ -34,13 +34,15 @@
 /////////FAV
 		['GET|POST', '/Favorites/favorite', 'Favorites#favorite', 'testFavorite'], // ok
 		['GET|POST', '/Favorites/delFav', 'Favorites#delFav', 'testDelfav'],// ok
-		['GET|POST', '/Favorites/showFav', 'Favorites#showFav', 'testShowfav'],//////////
+		['GET|POST', '/Favorites/showFav', 'Favorites#showFav', 'testShowfav'],// ok
 		
 /////////INGREDIENTS
 		['GET|POST', '/Ingredients/ingredient', 'Ingredients#ingredient', 'testIngredient'], //ok
-		['GET|POST', '/Ingredients/showIngredients', 'Ingredients#showIngredients', 'testShowingredients'],//////////SEARCH
+		['GET|POST', '/Ingredients/showIngredients', 'Ingredients#showIngredients', 'testShowingredients'],// ok
 
+////////LOGIN
 		['GET|POST', '/Users/login', 'Users#login', 'testLogin'],
+
 
 // ADMIN
 		// // route pour la page  admin place -> accès au dashboard places + recherche
@@ -52,8 +54,6 @@
 		// ['GET', '/admin/places/edit/[:id]', 'Places#delPlace', 'adminPlacesEdit'], 
 
 		// // route pour la page  admin place -> acces au dashboard places
-		['GET|POST', '/admin/recipes', 'Recipes#showAllRecipes', 'adminRecipes']
+		['GET|POST', '/admin/recipes', 'Recipes#showAllRecipes', 'adminRecipes'],
 
 	);
-	
-
