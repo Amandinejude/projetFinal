@@ -12,7 +12,7 @@ class FavoritesController extends Controller{
 		
 		$ajout = new FavoritesModel(); 
 	
-		$ajout->ajouterFav(14, 44); 
+		$ajout->ajouterFav(12, 50); 
 	
 		$this->show('default/home');
 	}
@@ -32,7 +32,7 @@ class FavoritesController extends Controller{
 	
 		$del = new FavoritesModel(); 
 		
-		$del->deleteFav(14);
+		$del->deleteFav(1, 9);
 	
 		$this->show('default/home');
 	}

@@ -24,10 +24,9 @@ class FavoritesModel extends \W\Model\Model {
 	}
 
 //delete fav
-	public function deleteFav($idUser, $idFav){
-		$this->setPrimaryKey("users_us_id");
+	public function deleteFav($idUser, $idPlace){
 
-		return $this->deleteFavoris($idUser, $idFav);
+		return $this->deleteFavoris($idUser, $idPlace);
 	}
 
 }

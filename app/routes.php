@@ -32,8 +32,8 @@
 		['GET|POST', '/Steps/delStep', 'Steps#delStep', 'testDelstep'], //ok
 	
 /////////FAV
-		['GET|POST', '/Favorites/favorite', 'Favorites#favorite', 'testFavorite'], ///////
-		['GET|POST', '/Favorites/delFav', 'Favorites#delFav', 'testDelfav'],////////////
+		['GET|POST', '/Favorites/favorite', 'Favorites#favorite', 'testFavorite'], // ok
+		['GET|POST', '/Favorites/delFav', 'Favorites#delFav', 'testDelfav'],// ok
 		['GET|POST', '/Favorites/showFav', 'Favorites#showFav', 'testShowfav'],//////////
 		
 /////////INGREDIENTS
