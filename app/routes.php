@@ -39,8 +39,13 @@
 /////////INGREDIENTS
 		['GET|POST', '/Ingredients/ingredient', 'Ingredients#ingredient', 'testIngredient'], //ok
 		['GET|POST', '/Ingredients/showIngredients', 'Ingredients#showIngredients', 'testShowingredients'],//////////SEARCH
+
+		['GET|POST', '/Users/login', 'Users#login', 'testLogin'],
+
+// ADMIN
+		['GET|POST', '/admin/place', 'Places#place', 'adminPlace'], //ok
+
+
+	);
 	
 
-////////LOGIN
-		['GET|POST', '/Users/login', 'Users#login', 'testLogin'],
-	);
