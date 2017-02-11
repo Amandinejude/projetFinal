@@ -102,7 +102,15 @@ class UsersModel extends Model
 
 
 
-
+/**
+	 * Créer un hash simple d'un mot de passe en utilisant l'algorithme par défaut
+	 * @param  string $plainPassword Le mot de passe en clair à hasher
+	 * @return string Le mot de passé hashé ou false si une erreur survient
+	 */
+	public function hashPassword($plainPassword)
+	{
+		return password_hash($plainPassword, CRYPT_BLOWFISH);
+	}
 
 	
 }

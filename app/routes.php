@@ -32,9 +32,9 @@
 		['GET|POST', '/Steps/delStep', 'Steps#delStep', 'testDelstep'], //ok
 	
 /////////FAV
-		['GET|POST', '/Favorites/favorite', 'Favorites#favorite', 'testFavorite'], ///////
-		['GET|POST', '/Favorites/delFav', 'Favorites#delFav', 'testDelfav'],////////////
-		['GET|POST', '/Favorites/showFav', 'Favorites#showFav', 'testShowfav'],//////////
+		['GET|POST', '/Favorites/favorite', 'Favorites#favorite', 'testFavorite'], // ok
+		['GET|POST', '/Favorites/delFav', 'Favorites#delFav', 'testDelfav'],// ok
+		['GET|POST', '/Favorites/showFav', 'Favorites#showFav', 'testShowfav'],// ok
 		
 /////////INGREDIENTS
 		['GET|POST', '/Ingredients/ingredient', 'Ingredients#ingredient', 'testIngredient'], //ok
@@ -54,3 +54,9 @@
 
 	);
 	
+
+	
+
+////////LOGIN
+		['GET|POST', '/Users/login', 'Users#login', 'testLogin'],
+	);
