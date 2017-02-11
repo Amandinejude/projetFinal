@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 09 Février 2017 à 16:10
+-- Généré le :  Sam 11 Février 2017 à 18:56
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.23
 
@@ -36,8 +36,9 @@ CREATE TABLE `favorites` (
 --
 
 INSERT INTO `favorites` (`users_us_id`, `places_pl_id`) VALUES
-(1, 9),
-(11, 8);
+(12, 50),
+(14, 45),
+(14, 50);
 
 -- --------------------------------------------------------
 
@@ -130,7 +131,7 @@ INSERT INTO `places` (`pl_id`, `pl_name`, `pl_tel`, `pl_address`, `pl_city`, `pl
 (42, 'Holybelly', '', '19 rue Lucien Sampaix', 'Paris', '75010', 'http://holybel.ly/', '@holybellycafe\r\n', NULL, 1),
 (43, 'Ellsworth', '+33 (0)1 42 60 59 66', '34, rue de Richelieu', 'Paris', '75001', 'http://www.ellsworthparis.com/', '@ellsworth.paris\r\n', NULL, 1),
 (44, 'Rose Bakery', '', '46 rue des Martyrs', 'Paris', '75009', 'http://www.rosebakery.fr/', '@rosebakeryparis', NULL, 1),
-(45, 'CLaus ', '+33 (0)1 42 33 55 10', '14-15 Rue Jean-Jacques Rousseau', 'Paris', '75001', 'http://www.clausparis.com/', '@clauspetitdejeuner', NULL, 1),
+(45, 'Claus ', '+33 (0)1 42 33 55 10', '14-15 Rue Jean-Jacques Rousseau', 'Paris', '75001', 'http://www.clausparis.com/', '@clauspetitdejeuner', NULL, 1),
 (46, 'Paperboy Café', '+33 (0)1 43 38 12 13', '137 Rue Amelot', 'Paris', '75011', NULL, '@paperboyparis', NULL, 1),
 (47, 'Café Pinson', '+33 (0)1 45 23 59 42', '58 rue du faubourg ', 'Paris', '75010', 'http://www.cafepinson.fr/home/', '@cafepinson', NULL, 1),
 (48, 'Soul Kitchen', '+33 (0)1 71 37 99 95', '33 Rue Lamarck', 'Paris', '75018', NULL, '@soulkitchenparis', NULL, 1),
@@ -363,7 +364,8 @@ INSERT INTO `users` (`us_id`, `us_name`, `us_firstname`, `us_password`, `us_emai
 (15, 'Sheldon', '	Cooper', 'bazinga', '	shelly@bbang.fr', 'user', '1'),
 (16, 'new', 'test', 'newpdw', 'new@new.com', 'user', '1'),
 (17, 'new', 'test', 'newpdw', 'new2@new.com', 'user', '0'),
-(18, 'new', 'test', 'newpdw', 'new2@new.com', 'user', '1');
+(18, 'new', 'test', 'newpdw', 'new2@new.com', 'user', '1'),
+(20, 'testhash', 'testhash', '$2y$10$6V1HX5f3Qk5Qfb7G4W/bwuxo6llEjWN5OSIpWZtd.p0HbkSmTRPjK', 'new3@hashage.com', 'user', '1');
 
 --
 -- Index pour les tables exportées
@@ -443,7 +445,7 @@ ALTER TABLE `places`
 -- AUTO_INCREMENT pour la table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `re_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `re_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT pour la table `steps`
 --
@@ -453,7 +455,7 @@ ALTER TABLE `steps`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- Contraintes pour les tables exportées
 --

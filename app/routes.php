@@ -38,22 +38,35 @@
 		
 /////////INGREDIENTS
 		['GET|POST', '/Ingredients/ingredient', 'Ingredients#ingredient', 'testIngredient'], //ok
+
 		['GET|POST', '/Ingredients/showIngredients', 'Ingredients#showIngredients', 'testShowingredients'],// ok
 
 ////////LOGIN
 		['GET|POST', '/Users/login', 'Users#login', 'testLogin'],
 
 
-// ADMIN
+// ADMIN accueil
+		['GET', '/admin', 'default#admin', 'adminHome'], //ok
+
+
+// ADMIN places
 		// // route pour la page  admin place -> accès au dashboard places + recherche
 		['GET|POST', '/admin/places', 'Places#showAllPlaces', 'adminPlace'], //ok
 		//route pour placeedit => le form pour la modification de lieu
-		['GET', '/admin/places/edit/[:id]', 'Places#upPlace', 'adminPlacesEdit'], 
+		['GET|POST', '/admin/places/edit/[:id]', 'Places#upPlace', 'adminPlacesEdit'], //ok
 		//methode,        URL 		, Controller (nomdeclass#fonction), nom de la route
-		//route pour placedelete => supression
-		// ['GET', '/admin/places/edit/[:id]', 'Places#delPlace', 'adminPlacesEdit'], 
 
-		// // route pour la page  admin place -> acces au dashboard places
+		//route pour placeedit => le form pour l'ajout de lieu (pas d'id en paramètre parce qu'on ne veut pas que ça soit prérempli comme pour modifier) A REGLER
+		['GET|POST', '/admin/places/edit', 'Places#place', 'adminPlacesEdit1'], 
+
+
+		// route pour placedelete
+		['GET|POST', '/admin/places/delete/[:id]', 'Places#delPlace', 'adminPlacesDelete'], //ok
+
+
+// ADMIN recipes
+ 
+		// // route pour la page  recipes -> acces au dashboard recipes
 		['GET|POST', '/admin/recipes', 'Recipes#showAllRecipes', 'adminRecipes'],
 
 	);

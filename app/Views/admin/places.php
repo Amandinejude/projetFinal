@@ -8,7 +8,8 @@ require('layouts/top.php');?>
 
 <h2>Places</h2>
 
-<p><a href="placesedit.php">Ajouter un endroit</a></p>
+<p><a href=<?= $this->url('adminPlacesEdit') ?>>Ajouter un nouveau lieu</a></p>
+
 <div class="well">
     <form>
         <div class="form-group">
@@ -48,8 +49,8 @@ require('layouts/top.php');?>
 
 
         <td><a href=<?= $this->url('adminPlacesEdit', ["id" => $place['pl_id']]) ?>>Modifier</a></td>
-        <!-- appel au controller qui delete -->
-        <td><a href=<?= $this->url('adminPlacesEdit', ["id" => $place['pl_id']]) ?>>Supprimer</a></td>
+
+        <td><a href=<?= $this->url('adminPlacesDelete', ["id" => $place['pl_id']]) ?>>Supprimer</a></td>
     </tr>
 
     <?php } ?>

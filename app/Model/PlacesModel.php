@@ -53,7 +53,7 @@ class PlacesModel extends \W\Model\Model {
 		return $this->update($data, $id);
 	}
 
-//delete place
+//delete place 
 	public function deletePlace($id){
 		$this->setPrimaryKey("pl_id");
 		return $this->delete($id);

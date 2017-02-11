@@ -9,13 +9,18 @@ require('layouts/top.php'); ?>
       <div class="container text-center wow fadeIn">
             <div class="row content-row">
                 <div class="col-lg-12">
-                    <form method="post" action="<?= $this->url('testUpplace') ?>">
+                 
+                    <!-- TEST POUR ARRIVER A JOINDRE AJOUT ET MODIF DE PLACES -->
+                    <!-- avec l'input hidden, le formulaire pré-rempli marchent encore -->
+
+                    <form method="post" enctype="multipart/form-data" >
+                        <input type="hidden" name="id" value="<?= $this->url('adminPlacesEdit', ["id" => $place['pl_id']]) ?>"/>
 
                         <label>Place Name</label> <br>
                         <input type="text" name="place" placeholder="Enter the place name here" value=<?= $place['pl_name'] ?> ><br>
 
                         <label>Place Téléphone</label> <br>
-                        <input type="text" name="tel" placeholder="Enter the place name here" value=<?= $place['pl_name'] ?> ><br>
+                        <input type="text" name="tel" placeholder="Enter the place name here" value=<?= $place['pl_tel'] ?> ><br>
 
                         <label>Place Adress</label><br>
                         <input type="text" name="address" placeholder="Enter the place address here" value=<?= $place['pl_address'] ?> ><br>
@@ -34,9 +39,9 @@ require('layouts/top.php'); ?>
                         <input type="text" name="instagram" placeholder="Enter the instagram" value=<?= $place['pl_instagram'] ?> ><br>
 
                         <label>Picture</label><br>
-                        <input type="image" name="pic" src=<?= $place['pl_picture'] ?>  width=""><br>
+                        <input type="file" name="pic" src=<?= $place['pl_picture'] ?> accept="image/*"" width=""  ><br>
 
-                        <input type="submit" name="addPlace" value="Add a new place">
+                        <input type="submit" name="addPlace" value="Enregistrer">
             
                     </form>
                   
