@@ -34,7 +34,7 @@
 /////////FAV
 		['GET|POST', '/Favorites/favorite', 'Favorites#favorite', 'testFavorite'], // ok
 		['GET|POST', '/Favorites/delFav', 'Favorites#delFav', 'testDelfav'],// ok
-		['GET|POST', '/Favorites/showFav', 'Favorites#showFav', 'testShowfav'],//////////
+		['GET|POST', '/Favorites/showFav', 'Favorites#showFav', 'testShowfav'],// ok
 		
 /////////INGREDIENTS
 		['GET|POST', '/Ingredients/ingredient', 'Ingredients#ingredient', 'testIngredient'], //ok
