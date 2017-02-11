@@ -2,27 +2,49 @@
 //page servant à ajouter un nouveau lieu + modifier un lieu existant (form addplaces)
 
 //view\abonne-edit.php
-require('layout/top.php'); ?>
-    <h2>Editer un abonne</h2>
+require('layouts/top.php'); ?>
+    <h2>Editer un lieu</h2>
+ 
+     <section>
+      <div class="container text-center wow fadeIn">
+            <div class="row content-row">
+                <div class="col-lg-12">
+                    <form method="post" action="<?= $this->url('testUpplace') ?>">
 
-     <form method="POST">
-<!--         <input type="hidden" name="id" value="<?= $abonne->getId(); ?>"/>
- -->        
- 			<div class="form-group <?php if (isset($errors['prenom'])) { echo 'has-error'; } ?>">
-            <label>Prenom</label>
-            <input type="text" name="prenom" class="form-control" value="<?= $abonne->getPrenom(); ?>"/>
-            <?php if (isset($errors['prenom'])) : ?>
-            <span class="help-block"><?= $errors['prenom']; ?></span>
-            <?php endif; ?>
-        </div>
-            <div class="form-group"<?php if (isset($errors['nom'])) { echo 'has-error'; } ?>">
-            <label>Nom</label>
-            <input type="text" name="nom" class="form-control" value="<?= $abonne->getNom(); ?>"/>
-            <?php if (isset($errors['nom'])) : ?>
-            <span class="help-block"><?= $errors['nom']; ?></span>
-            <?php endif; ?>
-        </div>
-        <button type="submit" class="btn btn-primary">Enregistrer</button>            
-    </form>
+                        <label>Place Name</label> <br>
+                        <input type="text" name="place" placeholder="Enter the place name here" value=<?= $place['pl_name'] ?> ><br>
+
+                        <label>Place Téléphone</label> <br>
+                        <input type="text" name="tel" placeholder="Enter the place name here" value=<?= $place['pl_name'] ?> ><br>
+
+                        <label>Place Adress</label><br>
+                        <input type="text" name="address" placeholder="Enter the place address here" value=<?= $place['pl_address'] ?> ><br>
+
+                        <!-- enum donc select avec menu déroulant -->
+                        <label>City</label><br>
+                        <input type="text" name="city" placeholder="Enter the city" value=<?= $place['pl_city'] ?> ><br>
+
+                        <label>District</label><br>
+                        <input type="text" name="district" placeholder="Enter the district" value=<?= $place['pl_district'] ?> ><br>
+
+                        <label>Website</label><br>
+                        <input type="text" name="website" placeholder="Enter the website" value=<?= $place['pl_website'] ?> ><br>
+                        
+                        <label>Instagram</label><br>
+                        <input type="text" name="instagram" placeholder="Enter the instagram" value=<?= $place['pl_instagram'] ?> ><br>
+
+                        <label>Picture</label><br>
+                        <input type="image" name="pic" src=<?= $place['pl_picture'] ?>  width=""><br>
+
+                        <input type="submit" name="addPlace" value="Add a new place">
+            
+                    </form>
+                  
+                </div>
+            </div>
+            
+    </section>
+
+   
     
-<?php require('layout/bottom.php'); ?>
+<?php require('layouts/bottom.php'); ?>

@@ -13,8 +13,7 @@ require('layouts/top.php');?>
     <form>
         <div class="form-group">
             <label>Nom</label>
-            <!-- version à utiliser avec la variable $nom correspondante, à checker -->
-            <input type="text" name="nom" class="form-control" value="<?= $pl_name; ?>"/>           
+            <input type="text" name="nom" class="form-control" value="<?= $pl_name; ?>" />           
 
         </div>
         <button type="submit" class="btn btn-default">Recherchez</button>    
@@ -48,9 +47,9 @@ require('layouts/top.php');?>
         <td><?php echo $place['pl_picture'];?></td>
 
 
-        <td><a href="../admin/placesedit?id=<?php echo $place['pl_id']; ?>">Modifier</a></td>
+        <td><a href=<?= $this->url('adminPlacesEdit', ["id" => $place['pl_id']]) ?>>Modifier</a></td>
         <!-- appel au controller qui delete -->
-        <td><a href="abonne-delete.php?id=<?php echo $place['pl_id']; ?>">Supprimer</a></td>
+        <td><a href=<?= $this->url('adminPlacesEdit', ["id" => $place['pl_id']]) ?>>Supprimer</a></td>
     </tr>
 
     <?php } ?>

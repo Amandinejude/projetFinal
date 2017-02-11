@@ -59,11 +59,16 @@ class PlacesModel extends \W\Model\Model {
 		return $this->delete($id);
 	}
 
+//research place
 
-}
+	public function searchPlace($search){
+	 	$search =array("pl_name"=>$search);
+        return $this->search($search);
+
+	}
  
 
-
+}
 
 
 

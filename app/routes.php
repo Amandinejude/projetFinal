@@ -41,11 +41,14 @@
 		['GET|POST', '/Ingredients/showIngredients', 'Ingredients#showIngredients', 'testShowingredients'],//////////SEARCH
 
 // ADMIN
-		// // route pour la page  admin place -> acces au dashboard places
+		// // route pour la page  admin place -> accès au dashboard places + recherche
 		['GET|POST', '/admin/places', 'Places#showAllPlaces', 'adminPlace'], //ok
 		//route pour placeedit => le form pour la modification de lieu
-		['GET|POST', '/admin/placesedit', 'Places#upPlaces', 'adminPlacesedit'], 
-		
+		['GET', '/admin/places/edit/[:id]', 'Places#upPlace', 'adminPlacesEdit'], 
+		//methode,        URL 		, Controller (nomdeclass#fonction), nom de la route
+		//route pour placedelete => supression
+		// ['GET', '/admin/places/edit/[:id]', 'Places#delPlace', 'adminPlacesEdit'], 
+
 		// // route pour la page  admin place -> acces au dashboard places
 		['GET|POST', '/admin/recipes', 'Recipes#showAllRecipes', 'adminRecipes']
 
