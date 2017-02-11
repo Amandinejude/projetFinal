@@ -48,22 +48,17 @@ class UsersModel extends \W\Model\UsersModel {
 
 //login user
 	public function logUser($pwd, $email){
- 		
- 		if($pwd=>"us_password" && $email=>"us_email"){
-
-			$log = new AuthentificationModel();
-
-			$logInfos->isValidLoginInfo($pwd, $email);
 
 
+		$log = new AuthentificationModel();
+		$user = $log->isValidLoginInfo($email, $pwd);
+		if($user != 0){
+			$this->logUserIn($user);
  		}else{
- 			return "Email ou Mot de passe invalide."
- 		}
-
-	
-
+ 			return "Email ou Mot de passe invalide.";
+ 		}	
 	}
-
+	
 }
 
  ?>

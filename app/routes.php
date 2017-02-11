@@ -39,5 +39,8 @@
 /////////INGREDIENTS
 		['GET|POST', '/Ingredients/ingredient', 'Ingredients#ingredient', 'testIngredient'], //ok
 		['GET|POST', '/Ingredients/showIngredients', 'Ingredients#showIngredients', 'testShowingredients'],//////////SEARCH
-	);
 	
+
+////////LOGIN
+		['GET|POST', '/Users/login', 'Users#login', 'testLogin'],
+	);

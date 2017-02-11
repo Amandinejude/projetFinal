@@ -21,8 +21,7 @@ class UsersController extends Controller{
 		$ajout = new UsersModel(); 
 	 
 		//on reprend cette meme variable pour preciser la function du model dont on a besoin (new / model / function, on crée le chemin)
-		$ajout->ajouterUser("testhash", "testhash", "newpdw", "new3@hashage.com"
-			//$_POST['name'], $_POST['firstname'], $_POST['pwd'], $_POST['email']
+		$ajout->ajouterUser($_POST['name'], $_POST['firstname'], $_POST['pwd'], $_POST['email']
 			);
 		$this->show('default/home');
 	}
@@ -42,8 +41,7 @@ class UsersController extends Controller{
 	
 		$up = new UsersModel(); 
 		
-		$retour = $up->updateUser(2, 'update', "update", "update", "up@date.com"
-			//$id, $_POST['name'], $_POST['firstname'], $_POST['password'], $_POST['email']
+		$retour = $up->updateUser($id, $_POST['name'], $_POST['firstname'], $_POST['password'], $_POST['email']
 			);
 
 		$this->show('default/home'); 
@@ -60,11 +58,14 @@ class UsersController extends Controller{
 	}
 
 
+
 //login USER
 	public function login(){
-
+		$_POST['email'] = "new3@hashage.com";
+		$_POST['pwd'] = "testhash";
 		if (empty($_POST['email']) | empty($_POST['pwd'])){
-			return "Vous devez saisir un email et un mot de passe valide !"
+			return "Vous devez saisir un email et un mot de passe valide !";
+
 		}else{
 			$log = new UsersModel();
 			$log->logUser($_POST['pwd'], $_POST['email']);
