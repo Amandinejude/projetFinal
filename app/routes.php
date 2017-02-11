@@ -50,13 +50,9 @@
 		// ['GET', '/admin/places/edit/[:id]', 'Places#delPlace', 'adminPlacesEdit'], 
 
 		// // route pour la page  admin place -> acces au dashboard places
-		['GET|POST', '/admin/recipes', 'Recipes#showAllRecipes', 'adminRecipes']
-
-	);
+		['GET|POST', '/admin/recipes', 'Recipes#showAllRecipes', 'adminRecipes'],
 	
-
-	
-
 ////////LOGIN
 		['GET|POST', '/Users/login', 'Users#login', 'testLogin'],
+	
 	);
