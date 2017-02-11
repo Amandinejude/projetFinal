@@ -8,7 +8,7 @@ require('layouts/top.php');
 
 
  ?>
-
+ 
 <h2>Recipes</h2>
 
 <p><a href="placesedit.php">Ajouter une recette</a></p>
