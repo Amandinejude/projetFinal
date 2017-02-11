@@ -16,12 +16,20 @@ class FavoritesModel extends \W\Model\Model {
 	}
 
 //select TOUS les favoris de tel user
-	public function selectFav(){
+	public function selectFav($idUser){
 
-		$data = array("places_pl_id" =>$place, "users_us_id" =>$user);
+		$sql = 'SELECT * FROM `favorites` WHERE `users_us_id`= :idUser';
 
-		return $this->findAll($data);
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':idUser', $idUser);
+		$sth->execute();
+		return $sth->fetchAll();
+		$search = array("users_us_id"=>$idUser);
+		return $this->search($search);
+
+
 	}
+
 
 //delete fav
 	public function deleteFav($idUser, $idPlace){

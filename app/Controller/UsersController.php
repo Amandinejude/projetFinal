@@ -73,6 +73,12 @@ class UsersController extends Controller{
 
 	}
 
+//logout Users
+
+	public function logout(){
+		$log = new UsersModel();
+		$log->logOut();
+	}
 
 }
 

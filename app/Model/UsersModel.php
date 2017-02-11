@@ -1,4 +1,4 @@
-<?php 
+<?php  
 
 namespace Model; 
 
@@ -57,6 +57,12 @@ class UsersModel extends \W\Model\UsersModel {
  		}else{
  			return "Email ou Mot de passe invalide.";
  		}	
+	}
+
+//logout user
+	public function logOut(){
+
+		$this->logUserOut($user);
 	}
 	
 }
