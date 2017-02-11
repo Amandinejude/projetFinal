@@ -27,7 +27,7 @@ class AuthentificationModel
 		}
 
 		if(password_verify($plainPassword, $foundUser[$app->getConfig('security_password_property')])){
-			return (int) $foundUser[$app->getConfig('security_id_property')];
+			return $foundUser;
 		}
 
 		return 0;
@@ -93,6 +93,6 @@ class AuthentificationModel
 	 */
 	public function hashPassword($plainPassword)
 	{
-		return password_hash($plainPassword, PASSWORD_DEFAULT);
+		return password_hash($plainPassword, CRYPT_BLOWFISH);
 	}
 }
