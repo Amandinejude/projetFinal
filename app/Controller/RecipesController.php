@@ -1,34 +1,25 @@
- <?php  
-
+<?php  
 namespace Controller;
-
 use \W\Controller\Controller;
 use Model\RecipesModel;
-
 class RecipesController extends Controller{
-
 //ajout RECIPE
 	public function recipe(){
 		
 		$ajout = new RecipesModel(); 
 	
-		$ajout->ajouterRecipe("recipeTEST", "testIMGTEST"
-			//$_POST['recipe'], $_POST['pictureRecipe']
+		$ajout->ajouterRecipe($_POST['recipe'], $_POST['pictureRecipe']
 			); 
 	
 		$this->show('default/home');
 	}
-
 //update dans la BDD RECIPE
 	public function upRecipe(){
 		$up = new RecipesModel(); 
 		
-		$up->updateRecipe(6, "update", "update"
-			//$id, $_POST['recipe'], $_POST['pictureRecipe']
-			);
+		$up->updateRecipe(6, "update", "update");
 		$this->show('default/home'); 
 	}
-
 //delete RECIPE
 	public function delRecipe(){
 		$del = new RecipesModel(); 
@@ -56,7 +47,11 @@ class RecipesController extends Controller{
 		$this->show('default/home');
 	}
 
+	//select ALL recipes pour la partie admin pour pouvoir les modifier
+	public 	function showAllRecipes(){
+		$select = new RecipesModel();
+		$retour = $select->selectAllRecipes(); 
+		$this->show('admin/recipes', ["recipes" => $retour]);
+	}
 }
-
-
  ?>
