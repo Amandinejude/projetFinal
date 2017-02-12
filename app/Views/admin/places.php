@@ -1,5 +1,5 @@
 <?php 
-
+// OK
 //view\places.php
 
 //Page d'accueil du dashbord admin qui affiche l'état de la base de données et qui permet d'ajouter, de modifier ou de supprimer des lieux
@@ -8,7 +8,7 @@ require('layouts/top.php');?>
 
 <h2>Places</h2>
 
-<p><a href=<?= $this->url('adminPlacesEdit') ?>>Ajouter un nouveau lieu</a></p>
+<p><a href=<?= $this->url('adminPlacesAdd') ?>>Ajouter un nouveau lieu</a></p>
 
 <div class="well">
     <form>

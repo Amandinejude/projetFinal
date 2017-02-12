@@ -7,6 +7,7 @@ class PlacesModel extends \W\Model\Model {
 
 //insert place
 	public function ajouterPlace($place, $tel, $address, $city, $district, $website, $instagram, $pic, $user){
+		$this->setPrimaryKey("pl_id");
 
 		//on check si le lieu n'est pas déjà présent dans la BDD
 		if($this->placeExists($place)){
@@ -66,9 +67,10 @@ class PlacesModel extends \W\Model\Model {
         return $this->search($search);
 
 	}
- 
+  
 
 }
+  
 
 
 

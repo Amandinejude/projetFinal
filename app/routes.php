@@ -49,24 +49,30 @@
 		['GET', '/admin', 'default#admin', 'adminHome'], //ok
 
 
-// ADMIN places
+// ADMIN places //OK
+
+
 		// // route pour la page  admin place -> accès au dashboard places + recherche
 		['GET|POST', '/admin/places', 'Places#showAllPlaces', 'adminPlace'], //ok
 		//route pour placeedit => le form pour la modification de lieu
 		['GET|POST', '/admin/places/edit/[:id]', 'Places#upPlace', 'adminPlacesEdit'], //ok
-		//methode,        URL 		, Controller (nomdeclass#fonction), nom de la route
-
-		//route pour placeedit => le form pour l'ajout de lieu (pas d'id en paramètre parce qu'on ne veut pas que ça soit prérempli comme pour modifier) A REGLER
-		['GET|POST', '/admin/places/edit', 'Places#place', 'adminPlacesEdit1'], 
-
-
+		//route pour placesAdd => le form pour l'ajout de lieu (pas d'id en paramètre parce qu'on ne veut pas que ça soit prérempli comme pour modifier) ok
+		['GET|POST', '/admin/places/add', 'Places#addPlace', 'adminPlacesAdd'], 
 		// route pour placedelete
 		['GET|POST', '/admin/places/delete/[:id]', 'Places#delPlace', 'adminPlacesDelete'], //ok
 
-
+ 
 // ADMIN recipes
  
-		// // route pour la page  recipes -> acces au dashboard recipes
-		['GET|POST', '/admin/recipes', 'Recipes#showAllRecipes', 'adminRecipes'],
+		// // route pour la page  recipes -> acces au dashboard recipes OK
+		['GET|POST', '/admin/recipes', 'Recipes#showAllRecipes', 'adminRecipes'], //OK
+		//route pour recipesAdd => le form pour l'ajout de lieu 
+		['GET|POST', '/admin/recipes/add', 'Recipes#addRecipe', 'adminRecipesAdd'], //ok
+		//route pour recipesedit => le form pour la modification de recette
+		['GET|POST', '/admin/recipes/edit/[:id]', 'Recipes#upRecipe', 'adminRecipesEdit'],//OK
+		// route pour recipedelete
+		['GET|POST', '/admin/recipes/delete/[:id]', 'Recipes#delRecipe', 'adminRecipesDelete'], //OK
+		//methode,        URL 		, Controller (nomdeclass#fonction), nom de la route
+ 
 
 	);
