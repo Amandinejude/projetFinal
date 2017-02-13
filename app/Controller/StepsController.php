@@ -8,7 +8,8 @@ class StepsController extends Controller {
 
 //ajout dans la BDD des STEPS
 	public function step(){
-		
+		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
+		$this->allowTo('admin');
 		$ajout = new StepsModel(); 
 	
 		$ajout->ajouterStep('something', 5); 
@@ -19,7 +20,8 @@ class StepsController extends Controller {
 
 //update dans la BDD STEP
 	public function upStep(){
-	
+		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
+		$this->allowTo('admin');
 		$up = new StepsModel(); 
 		
 		$up->updateStep(9, "updating");
@@ -29,7 +31,8 @@ class StepsController extends Controller {
 
 //delete STEP
 	public function delStep(){
-	
+		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
+		$this->allowTo('admin');
 		$del = new StepsModel(); 
 		
 		$del->deleteStep(11);

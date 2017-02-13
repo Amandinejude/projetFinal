@@ -8,7 +8,8 @@ use Model\PlacesModel;
 class RecipesController extends Controller{
 //ajout RECIPE OK OK OK 
 	public function addRecipe(){
-		
+		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
+		$this->allowTo('admin');
 		$addRecipe = new RecipesModel(); 
 		$addStep = new StepsModel();
 		$addPlace = new PlacesModel();
@@ -29,10 +30,12 @@ class RecipesController extends Controller{
 
 //update dans la BDD RECIPE OK OK OK OK 
 	public function upRecipe($id){
-		// Instanciation de la class PlacesModel parce qu'on a besoin des deux
-		
+		//$this->allowTo('admin');
+		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
+		$this->allowTo('admin');
 		$upRecipe = new RecipesModel();
 		$upStep = new StepsModel();
+		// Instanciation de la class PlacesModel parce qu'on a besoin des deux
 		$upPlace = new PlacesModel();
 
 		if(!empty($_POST)){
@@ -61,6 +64,8 @@ class RecipesController extends Controller{
 //delete RECIPE OK OK
 
 	public function delRecipe($id){
+		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
+		$this->allowTo('admin');
 		$del = new RecipesModel(); 
 		
 		$del->deleteRecipe($id);

@@ -9,7 +9,8 @@ class PlacesController extends Controller{
 
 //ajout PLACE OK +> A MODIFIER EN FONCTION DE LA CONNEXION POUR LE USER ID
 	public function addPlace(){
-		
+		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
+		$this->allowTo('admin');
 		if(!empty($_POST)){
 			$ajout = new  PlacesModel(); 
 			$_POST['pic'] = $this->movePicture();
@@ -22,7 +23,7 @@ class PlacesController extends Controller{
 //update PLACE OK
 	public function upPlace($id){
 		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
-		
+		$this->allowTo('admin');
 		$select = new PlacesModel(); // Instanciation de la class PlacesModel
 		
  
@@ -42,7 +43,8 @@ class PlacesController extends Controller{
 //delete PLACE  OK
 
 	public function delPlace($id){
-	
+		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
+		$this->allowTo('admin');
 		$del = new PlacesModel(); // Instanciation de la class PlacesModel
 
 		$del->deletePlace($id);
@@ -87,6 +89,7 @@ class PlacesController extends Controller{
 
 //ajout de la fonction correspondant à l'ajout d'image dans la base de données OK OK 
 	public 	function movePicture(){
+		$this->allowTo('admin');
 		if($_FILES['pic']['size'] > 0) {
 			//il stocké dans les dossiers temporaires, le temps de la session d'utilisateur (max 30 minutes après la dernière action) ou le temps de la durée d'exécution du script
 			//on va le stocker dans une variable //pas le droit d'utiliser un chemin absolu comme une URL. 
