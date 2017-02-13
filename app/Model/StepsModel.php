@@ -5,7 +5,7 @@ namespace Model;
 class StepsModel extends \W\Model\Model {
 
 //insert step
-	public function ajouterStep($description, $recipe){
+	public function addStep($description, $recipe){
 		$this->setPrimaryKey("st_id");
 		$data = array("st_description" =>$description, "recipes_re_id" =>$recipe);
 		return $this->insert($data); 
@@ -30,7 +30,7 @@ class StepsModel extends \W\Model\Model {
 //update step
 	public function updateStep($id, $description){
 		$this->setPrimaryKey("st_id");
-		$data = array("st_description" =>$description);
+		$data = array("st_description" => $description);
 		return $this->update($data, $id); 
 	}
 

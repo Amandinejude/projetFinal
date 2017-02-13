@@ -6,7 +6,7 @@ class RecipesModel extends \W\Model\Model {
 
 
 //insert recipe
-	public function ajouterRecipe($recipe, $pic){
+	public function addRecipe($recipe, $pic){
 		
 		$this->setPrimaryKey("re_id");
 		//on check si la recette n'est pas déjà présent dans la BDD
@@ -54,6 +54,16 @@ class RecipesModel extends \W\Model\Model {
 		$this->setPrimaryKey("re_id");
 		return $this->delete($id); 
 	}
+
+//research recipe
+
+	public function searchRecipe($search){
+	 	$search =array("re_name"=>$search);
+        return $this->search($search);
+
+	}
+
 }
+
 
  ?>

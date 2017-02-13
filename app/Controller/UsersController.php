@@ -38,6 +38,7 @@ class UsersController extends Controller{
 
 //update USER
 	public function upUser(){
+		
 	
 		$up = new UsersModel(); 
 		
@@ -61,14 +62,31 @@ class UsersController extends Controller{
 
 //login USER
 	public function login(){
-		$_POST['email'] = "new3@hashage.com";
-		$_POST['pwd'] = "testhash";
-		if (empty($_POST['email']) | empty($_POST['pwd'])){
-			return "Vous devez saisir un email et un mot de passe valide !";
+		/*$_POST['email'] = "new3@hashage.com";
+		$_POST['pwd'] = "testhash";*/
+		if (empty($_POST['email']) | empty($_POST['pwd'])){	
+			$reponse = [
+				'message' => "Vous devez saisir un email et un mot de passe valide !",
+				'type' => 'error'
+			];
+			$this->showJson($reponse);
 
+	 		//return "Vous devez saisir un email et un mot de passe valide !";
 		}else{
 			$log = new UsersModel();
-			$log->logUser($_POST['pwd'], $_POST['email']);
+			$user = $log->logUser($_POST['pwd'], $_POST['email']);
+			if($user){
+				$reponse = [
+				'message' => "Vous êtes bien connecté(e)",
+				'type' => 'success'
+				];
+			}else{
+				$reponse = [
+					'message' => "Email ou Mot de passe invalide.",
+					'type' => 'error'
+				];
+			}
+			$this->showJson($reponse);
 		}
 
 	}

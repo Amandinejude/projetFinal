@@ -53,9 +53,10 @@ class UsersModel extends \W\Model\UsersModel {
 		$log = new AuthentificationModel();
 		$user = $log->isValidLoginInfo($email, $pwd);
 		if($user != 0){
-			$this->logUserIn($user);
+			$log->logUserIn($user);
+ 			return true;
  		}else{
- 			return "Email ou Mot de passe invalide.";
+ 			return false;
  		}	
 	}
 
