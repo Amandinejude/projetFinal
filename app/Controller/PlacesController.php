@@ -1,5 +1,5 @@
 <?php 
-
+ 
 namespace Controller;
 
 use \W\Controller\Controller;
@@ -7,19 +7,21 @@ use Model\PlacesModel;
 
 class PlacesController extends Controller{
 
-//ajout PLACE
-	public function place(){
+//ajout PLACE OK +> A MODIFIER EN FONCTION DE LA CONNEXION POUR LE USER ID
+	public function addPlace(){
 		
-		$ajout = new  PlacesModel(); 
-	
-		$ajout->ajouterPlace($_POST["place"], $_POST['tel'], $_POST['address'], $_POST['city'], $_POST['website'], $_POST['instagram'], $_POST['pic'],  $_POST['district']
-			); 
-	
-		$this->show('admin/placeedit');
+		if(!empty($_POST)){
+			$ajout = new  PlacesModel(); 
+			$_POST['pic'] = $this->movePicture();
+			$ajout->ajouterPlace($_POST["place"], $_POST['tel'], $_POST['address'], $_POST['city'], $_POST['website'], $_POST['instagram'], $_POST['pic'],  $_POST['district'], 1); 
+			$this->redirectToRoute('adminPlace');
+		}
+		$this->show('admin/placesForm');
 	}
 
 //update PLACE OK
 	public function upPlace($id){
+		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
 		
 		$select = new PlacesModel(); // Instanciation de la class PlacesModel
 		
@@ -28,11 +30,11 @@ class PlacesController extends Controller{
 			$_POST['pic'] = $this->movePicture();
 			$select->updatePlace($id, $_POST["place"], $_POST['tel'], $_POST['address'], $_POST['city'], $_POST['district'], $_POST['website'], $_POST['instagram'], $_POST['pic']);	
 			$place = $select->selectPlace($id); // Renvoie les données de la place - paramètre id de la place
-		}else
-			$place = $select->selectPlace($id); // Renvoie les données de la place - paramètre id de la place	 
-	
 			echo "Place modifiée";
-		$this->show('admin/placesedit',["place" => $place]);  
+		}else{
+			$place = $select->selectPlace($id); // Renvoie les données de la place - paramètre id de la place	 
+		}
+		$this->show('admin/placesForm',["place" => $place]);  
 
 	}
 
@@ -59,7 +61,7 @@ class PlacesController extends Controller{
 	}
 
 
-//select ALL PLACES en fonction de la recipe
+//select ALL PLACES en fonction de la recipe 
 	public 	function showPlaces(){
 		$select = new PlacesModel(); 
 		// 
@@ -69,7 +71,7 @@ class PlacesController extends Controller{
 		$this->show('default/home');
 	}
 	
-//select ALL PLACES pour la partie admin pour pouvoir les modifier OK
+//select ALL PLACES pour la partie admin pour pouvoir les modifier OK OK
 	public 	function showAllPlaces(){
 		$select = new PlacesModel(); 
 		if(!empty($_GET)){
@@ -83,7 +85,7 @@ class PlacesController extends Controller{
 	}
 	
 
-//ajout de la fonction correspondant à l'ajout d'image dans la base de données
+//ajout de la fonction correspondant à l'ajout d'image dans la base de données OK OK 
 	public 	function movePicture(){
 		if($_FILES['pic']['size'] > 0) {
 			//il stocké dans les dossiers temporaires, le temps de la session d'utilisateur (max 30 minutes après la dernière action) ou le temps de la durée d'exécution du script
@@ -101,7 +103,7 @@ class PlacesController extends Controller{
 				// if => si ça ne marche pas if(move_uploaded_file(filename (nom du fichier temporaire, destination))
 				if(move_uploaded_file($_FILES['pic']['tmp_name'], $dir."/".$filename)) {
 					//création de la variable filepath qui est le chemin du dossier à partir de la racine du site
-					$filepath = 'assets/upload/'.$filename; 
+					$filepath = 'upload/'.$filename; 
 				}else{
 					$filepath = "upload failed";
 				}

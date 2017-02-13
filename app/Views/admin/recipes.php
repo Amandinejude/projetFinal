@@ -2,23 +2,20 @@
 //view\places.php
 
 
-//Page d'accueil du dashbord admin qui affiche l'état de la  base de données et qui permet d'ajouter, de modifier ou de supprimer des recettes
+//Page d'accueil du dashbord admin qui affiche l'état de la  base de données et qui permet d'ajouter, de modifier ou de supprimer des recettes OK OK
 
 require('layouts/top.php');
-
-
  ?>
  
 <h2>Recipes</h2>
 
-<p><a href="placesedit.php">Ajouter une recette</a></p>
+<p><a href=<?= $this->url('adminRecipesAdd') ?>>Ajouter une nouveau recette</a></p>
 <div class="well">
     <form>
         <div class="form-group">
             <label>Nom</label>
-            <!-- version à utiliser avec la variable $nom correspondante, à checker -->
-			<!-- <input type="text" name="nom" class="form-control" value="<?= $nom; ?>"/> -->           
-			<input type="text" name="nom" class="form-control" value="RECHERCHER"/>    
+                
+            <input type="text" name="nom" class="form-control" value="<?= $re_name; ?>" />           
 
 
         </div>
@@ -31,26 +28,23 @@ require('layouts/top.php');
         <th>Id</th>
         <th>Nom</th>
         <th>Picture</th>
-        <th>Steps</th>
+        <th>Option</th>
     </tr>
 
     <?php foreach ($recipes as $recipe) { ?>
  
      <tr>
-        <td><?php echo $recipe['re_id'];?></td>
-        <td><?php echo $recipe['re_name'];?></td>
-        <td><?php echo $recipe['re_picture'];?></td>
-
-        <td><?php echo $recipe['re_steps'];?></td>        
-
-    
-
-        <td><a href="placesedit.php?id=<?php echo $recipe['re_id']; ?>">Modifier</a></td>
-        <!-- appel au controller qui delete -->
-        <td><a href="abonne-delete.php?id=<?php echo $recipe['re_id']; ?>">Supprimer</a></td>
+        <td><?= $recipe['re_id'];?></td>
+        <td><?= $recipe['re_name'];?></td>
+        <td><img src=<?= $this->assetUrl($recipe['re_picture']);?> alt="image" height="50" width="50"></td>
+        
+        <td>
+            <a style="margin-right:5%" href=<?= $this->url('adminRecipesEdit', ["id" => $recipe['re_id']]) ?>>Modifier</a>
+            <a href=<?= $this->url('adminRecipesDelete', ["id" => $recipe['re_id']]) ?>>Supprimer</a>
+        </td>
     </tr>
 
-    <?php } ?>
-
+  <?php } ?>
+ 
 
 <?php require('layouts/bottom.php'); ?>
