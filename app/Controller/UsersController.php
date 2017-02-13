@@ -62,23 +62,30 @@ class UsersController extends Controller{
 
 //login USER
 	public function login(){
-		$_POST['email'] = "new3@hashage.com";
-		$_POST['pwd'] = "testhash";
+		/*$_POST['email'] = "new3@hashage.com";
+		$_POST['pwd'] = "testhash";*/
 		if (empty($_POST['email']) | empty($_POST['pwd'])){	
-		$reponse = [
-			'message' => "Vous devez saisir un email et un mot de passe valide !",
-			'type' => 'error'
-		];
-		$this->showJson($reponse);
+			$reponse = [
+				'message' => "Vous devez saisir un email et un mot de passe valide !",
+				'type' => 'error'
+			];
+			$this->showJson($reponse);
 
-	 return "Vous devez saisir un email et un mot de passe valide !";
+	 		//return "Vous devez saisir un email et un mot de passe valide !";
 		}else{
 			$log = new UsersModel();
-			$log->logUser($_POST['pwd'], $_POST['email']);
-			$reponse = [
-			'message' => "Vous êtes bien connecté(e)",
-			'type' => 'success'
-			];
+			$user = $log->logUser($_POST['pwd'], $_POST['email']);
+			if($user){
+				$reponse = [
+				'message' => "Vous êtes bien connecté(e)",
+				'type' => 'success'
+				];
+			}else{
+				$reponse = [
+					'message' => "Email ou Mot de passe invalide.",
+					'type' => 'error'
+				];
+			}
 			$this->showJson($reponse);
 		}
 
