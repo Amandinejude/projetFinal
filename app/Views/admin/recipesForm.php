@@ -10,7 +10,7 @@ require('layouts/top.php'); ?>
       	<div class="container text-center wow fadeIn">
         	<div class="row content-row">
            		<div class="col-lg-12">
-      			<!-- ISSET -> quand on va dans modifier => on affiche 4 formes (autrement on en affiche qu'un pour add) -->
+      			<!-- ISSET -> quand on va dans modifier => on affiche 4 boutons submit des forms (autrement on en affiche qu'un pour add) -->
 			<?php if(isset($step)): ?>
 			      	<form method="post" enctype="multipart/form-data" >
 			      	    <h3>Nom et photos</h3>
@@ -33,6 +33,7 @@ require('layouts/top.php'); ?>
 			        	<label>Ingredients Name</label> <br>
 
 			        	<input type="hidden" name="idstep1" value="<?= $step[0]['st_id']; ?>"/>
+			        	
 
 			        	<textarea row="1000" cols="1000" name="step1" placeholder="Enter the first step of the recipe here"><?= $step[0]['st_description'];?></textarea> <br>
 			            

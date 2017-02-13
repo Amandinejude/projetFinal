@@ -21,6 +21,7 @@ class PlacesController extends Controller{
 
 //update PLACE OK
 	public function upPlace($id){
+		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
 		
 		$select = new PlacesModel(); // Instanciation de la class PlacesModel
 		

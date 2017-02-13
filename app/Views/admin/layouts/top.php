@@ -15,9 +15,9 @@
             <a href=<?= $this->url('adminHome') ?> class="navbar-brand">ADMIN</a>
 
             <ul class="nav navbar-nav">
-                <!-- lien pour accéder à la page place -->
+                <!-- lien pour accéder à la page place nom de la route-->
                 <li><a href=<?= $this->url('adminPlace') ?>>Places</a></li>
-                <!-- lien pour accéder à la page place -->
+                <!-- lien pour accéder à la page recipe nom de la route-->
                 <li><a href=<?= $this->url('adminRecipes') ?>>Recipes</a></li> 
             </ul>
         </div> 

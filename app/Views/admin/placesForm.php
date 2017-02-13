@@ -22,7 +22,7 @@ require('layouts/top.php'); ?>
                         <label>Place Adress</label><br>
                         <input type="text" name="address" placeholder="Enter the place address here" value=<?= (isset($place))?$place['pl_address']:"" ?> ><br>
 
-                        <!-- enum donc select avec menu déroulant -->
+                      
                         <label>City</label><br>
                         <input type="text" name="city" placeholder="Enter the city" value=<?= (isset($place))?$place['pl_city']:"" ?> ><br>
 
