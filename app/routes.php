@@ -42,8 +42,11 @@
 		['GET|POST', '/Ingredients/showIngredients', 'Ingredients#showIngredients', 'testShowingredients'],// ok
 
 ////////LOGIN
-		['GET|POST', '/Users/login', 'Users#login', 'testLogin'],
-
+		//['GET|POST', '/Users/login', 'Users#login', 'testLogin'],
+		['POST', '/Users/login', 'Users#login', 'testLogin'],
+		['POST', '/Users/register', 'Users#register', 'testRegister'],
+		['GET', '/Users/logout', 'Users#logout', 'testLogout'],
+        
 
 // ADMIN accueil
 		['GET', '/admin', 'default#admin', 'adminHome'], //ok

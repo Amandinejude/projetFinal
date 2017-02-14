@@ -95,4 +95,12 @@ class AuthentificationModel
 	{
 		return password_hash($plainPassword, CRYPT_BLOWFISH);
 	}
+
+
+	public function setFlash($message, $type) {
+		$_SESSION['msg'] = [
+			'message' => $message,
+			'type' => $type
+		];
+	}
 }

@@ -1,3 +1,16 @@
+<?php 
+debug($_SESSION);
+if(isset($_SESSION['msg'])) {
+    $message = $_SESSION['msg']['message'];
+    $type = $_SESSION['msg']['type'];
+
+    unset($_SESSION['msg']);
+}
+else $message = null;
+
+?>
+<!--<i class="fa fa-heart" aria-hidden="true"></i>-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,24 +61,96 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
-                    </li>
+
+                <?php if(isset($_SESSION['user'])) : ?>
+                    <li><a href="#" ><?= $_SESSION['user']['us_name']?></a></li>                                        
                     <li>
-                        <a class="page-scroll" href="#about">Profil</a>
+                        <a href="<?= $this->url('testLogout') ?>" data-toggle="modal" >D√©connexion</a
                     </li>
+
+                <?php else :?>
+                    <li><a href="#signIn" data-toggle="modal" data-target="#signIn">Sign In</a></li>                                        
                     <li>
-                        <a class="page-scroll" href="#services">Favoris</a>
+                        <a href="#signUp" data-toggle="modal" data-target="#signUp">Sign Up</a
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#process">Deconnection</a>
-                    </li>
+                <?php endif ?>
                 </ul>
+    </nav>
+
+
+
+            <div class="modal fade" id="signIn">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">√ó</button>
+                      <h4 class="modal-title">Sign In</h4>
+                    </div>
+                    <form id="loginForm" method="POST" action="<?= $this->url('testLogin')?>">
+                    <div class="modal-body">
+                    <div id="signInModalAlertMsg" class="alert hide"></div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email" type="text">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" type="password">
+                      </div>
+                    </div>
+
+                    <div class="modal-footer">
+                      <a href="#" data-dismiss="modal" class="btn">Close</a>
+                      <button type="submit" href="#" class="btn btn-primary">Log-in</button>
+                    </div>
+
+                     </form>
+                  </div>
+                </div>
             </div>
+            
+
+            <div id="signUp" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Sign up</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <p>Sign up to try our cook and mix app!!!!</p>
+                             <div id="signUpModalAlertMsg" class="alert hide"></div>
+                            <form id="signupForm" method="POST" action="<?= $this->url('testRegister')?>">
+                                <div class="form-group">
+                                    <input name="firstname" type="text" class="form-control" placeholder="First Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <input name="name" type="text" class="form-control" placeholder="Last Name">
+                                </div>
+                                <div class="form-group">
+                                    <input name="email" type="email" class="form-control" placeholder="Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <input name="password" type="text" class="form-control" placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
+     <?php 
+     if($message!=null) : ?>
+     <div id="alertMsg2" class="alert alert-<?= $type ?>"><?= $message ?> </div>
+     <?php endif; ?>
+     <div id="alertMsg" class="alert hide"> </div>
     <header style="background-image: url('assets/img/creative/bg-header.jpg');">
         <div class="intro-content">
             <div class="brand-name">COOK&MIX</div>
@@ -97,11 +182,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-        </div>   
-
-       
+        </div>     
     </header>
     
     
@@ -112,15 +193,11 @@
                     <div class="portfolio-filter">
                         <ul id="filters" class="clearfix">
                             <li>
-
-                                <span class="filter active" data-filter="identity graphic logo web">Recette</span>
-                            </li>
-                            <li>
-                                <span class="filter" data-filter="identity">Restaurants</span>
-
                             <input id="recherche" class="form-control" name="Recette" data-provide="typehead">
                             </li>
-
+                            <li>
+                                <span class="filter" data-filter="identity graphic logo web">Restaurants</span>
+                            </li>
                             <li>
                                 <span class="filter" data-filter="graphic">Testez</span>
                             </li>
@@ -209,7 +286,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>    
+
+
     <footer class="footer" style="background-image: url('assets/img/bg-footer.jpg')">
         <div class="container text-center">
             <div class="row">
@@ -280,15 +359,20 @@ Le restaurant Le Jules est ouvert tous les jours du lundi au dimanche, de 8h30 √
                                     <strong><a href=" ">2 rue Perr√©e, 75002, Paris</a>
                                     </strong>
                                 </li>
-                                <li>Site:
-                                    <strong><a href="">Visiter</a>
+                                <li><i class="fa fa-external-link-square" aria-hidden="true"></i>
+                                    <strong><a href="">Site</a>
                                     </strong>
                                 </li>
                                 
-                                <li>Instagram:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                <li><i class="fa fa-instagram" aria-hidden="true"></i>
+                                    <strong><a href="http://startbootstrap.com">instagram</a>
                                     </strong>
                                 </li>
+                                
+                                <li><i class="fa fa-heart" aria-hidden="true"></i>
+                                    <strong><a href="http://startbootstrap.com">Ajouter aux favoris</a>
+                                    </strong>
+                                </li>                                    
                             </ul>
                         </div>
                     </div>
@@ -296,6 +380,8 @@ Le restaurant Le Jules est ouvert tous les jours du lundi au dimanche, de 8h30 √
             </div>
         </div>
     </div>
+    
+    
     <!-- Example Modal 3 -->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true" style="background-image: url('assets/img/creative/portfolio/bg-3.jpg')">
         <div class="modal-content">
@@ -309,7 +395,7 @@ Le restaurant Le Jules est ouvert tous les jours du lundi au dimanche, de 8h30 √
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-2">
-                            <img src=<?= $this->assetUrl('img/client-logos/logo-1.png')?> class="img-responsive img-centered" alt="">
+                            
                             <h2>Project Title</h2>
                             <hr class="colored">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.</p>
@@ -355,7 +441,6 @@ Le restaurant Le Jules est ouvert tous les jours du lundi au dimanche, de 8h30 √
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-2">
-                            <img src="assets/img/client-logos/logo-2.png" class="img-responsive img-centered" alt="">
                             <h2>Project Title</h2>
                             <hr class="colored">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.</p>
@@ -414,7 +499,7 @@ Le restaurant Le Jules est ouvert tous les jours du lundi au dimanche, de 8h30 √
     <!--Pop up newsletter-->
     <script language="javascript" src=<?= $this->assetUrl('http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js')?> type="text/javascript"></script>
    
-   
+    <script src=<?= $this->assetUrl('js/script.js')?>></script>
    <!--Script permettant l'affichage de la newsletter-->
     <script type="text/javascript">
     $(document).ready(function(){

@@ -4,6 +4,7 @@ namespace Controller;
 
 use \W\Controller\Controller;
 use Model\UsersModel;
+use \W\Security\AuthentificationModel;
 
 class UsersController extends Controller{
 
@@ -62,32 +63,41 @@ class UsersController extends Controller{
 
 //login USER
 	public function login(){
-		/*$_POST['email'] = "new3@hashage.com";
-		$_POST['pwd'] = "testhash";*/
-		if (empty($_POST['email']) | empty($_POST['pwd'])){	
-			$reponse = [
-				'message' => "Vous devez saisir un email et un mot de passe valide !",
-				'type' => 'error'
-			];
-			$this->showJson($reponse);
+	
+		// Traite le cas où le formulaire est vide
+		if (trim($_POST['email'])=='' || trim($_POST['password'])==''){
+			$message = [
+            	'msg' => 'Vous ne pouvez pas envoyé un formulaire vide',
+            	'type' => 'error'
+            ];
+			return $this->showJson($message);
+		}	
 
-	 		//return "Vous devez saisir un email et un mot de passe valide !";
-		}else{
+		// Si les infos sont valides, on connecte l'utilisateur 
 			$log = new UsersModel();
-			$user = $log->logUser($_POST['pwd'], $_POST['email']);
-			if($user){
-				$reponse = [
-				'message' => "Vous êtes bien connecté(e)",
-				'type' => 'success'
-				];
-			}else{
-				$reponse = [
-					'message' => "Email ou Mot de passe invalide.",
-					'type' => 'error'
-				];
-			}
-			$this->showJson($reponse);
-		}
+			$message = $log->logUser($_POST['password'], $_POST['email']);
+
+			$this->showJson($message);
+
+
+		// si le login ou MDP sont erronés
+		
+
+	}
+
+	public function register() {
+
+	if (trim($_POST['email'])=='' || trim($_POST['password'])=='' || trim($_POST['name'])=='' || trim($_POST['firstname'])==''){
+			$message = [
+            	'msg' => 'Tous les champs sont requis',
+            	'type' => 'error'
+            ];
+			return $this->showJson($message);
+		}		
+
+	$user = new UsersModel;
+	$message = $user->signUp($_POST['name'], $_POST['firstname'], $_POST['password'], $_POST['email']);
+	return $this->showJson($message);
 
 	}
 
@@ -96,6 +106,10 @@ class UsersController extends Controller{
 	public function logout(){
 		$log = new UsersModel();
 		$log->logOut();
+		$auth= new AuthentificationModel;
+		$auth->setFlash('Vous êtes déconnectée', 'success');
+		$this->redirectToRoute('default_home');
+
 	}
 
 }
