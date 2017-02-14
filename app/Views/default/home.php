@@ -1,5 +1,5 @@
 <?php 
-debug($_SESSION);
+//debug($_SESSION);
 if(isset($_SESSION['msg'])) {
     $message = $_SESSION['msg']['message'];
     $type = $_SESSION['msg']['type'];
@@ -201,6 +201,24 @@ else $message = null;
                             <li>
                                 <span class="filter" data-filter="graphic">Testez</span>
                             </li>
+
+                    <form>
+                        <h3>Choix Recette</h3>
+
+                        <select name="whichRecipe">
+                            <?php foreach ($places as $place) { ?>
+
+                            <option value="<?=$place['pl_name'];?>"><?=$place['pl_name'];?></option>
+                            <?php } ?>
+
+                        </select>
+
+                        <input type="submit" name="AffichageLieux" value="Afficher les lieux"   >
+                        <input type="submit" name="AffichageRecette" value="Afficher la recette">
+
+                    </form>    
+
+
                         </ul>
                     </div>
                 </div>
@@ -307,18 +325,7 @@ else $message = null;
                     </p>
                 </div>
             </div>
-            <div class="row social">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="fa fa-facebook fa-fw fa-2x"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-twitter fa-fw fa-2x"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin fa-fw fa-2x"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            
             <div class="row copyright">
                 <div class="col-lg-12">
                     <p class="small">&copy; 2017 COOKANDMIX TEAM</p>

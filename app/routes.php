@@ -78,4 +78,13 @@
 		//methode,        URL 		, Controller (nomdeclass#fonction), nom de la route
  
 
+
+/////////PROFIL USER
+		['GET|POST', '/profil', 'Users#showUser', 'showProfil'],
+
+		['GET|POST', '/profil', 'Users#upUser', 'updateProfil'], 
+		['GET|POST', '/profil', 'Users#delUser', 'deleteProfil'], 
+
+
+
 	);

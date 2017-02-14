@@ -64,14 +64,18 @@ class PlacesController extends Controller{
 
 
 //select ALL PLACES en fonction de la recipe 
-	public 	function showPlaces(){
-		$select = new PlacesModel(); 
-		// 
-		$retour = $select->selectPlaces(4); //id de la recette qui correspond
-		print_r($retour);
-		die();
-		$this->show('default/home');
-	}
+    public     function showPlaces($id){
+        $select = new PlacesModel(); 
+        // instanciation de la class Recipe model: on a besoin de la fonction selectRecipes
+        $selectRecipes = new RecipesModel();
+
+        $retour = $select->selectPlaces($id); //id de la recette qui correspond
+    
+        $recipes = $selectRecipes->selectRecipes($id);
+        $this->show('default/home',["places" => $retour, "recipes" => $recipes]);  
+        //ok j'arrive à afficher le form avec le select intégrant les recettes
+
+    }
 	
 //select ALL PLACES pour la partie admin pour pouvoir les modifier OK OK
 	public 	function showAllPlaces(){

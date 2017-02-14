@@ -58,7 +58,7 @@ class UsersModel extends \W\Model\UsersModel {
 			$message = [
             	'msg' => 'Vous êtes connecté',
             	'type' => 'success',
-            	'user' => $user['us_name']
+            	'user' => $user['us_firstname']
             ];
 			return $message;
  		}

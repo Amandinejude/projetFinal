@@ -31,10 +31,9 @@ class UsersController extends Controller{
 	public 	function showUser(){
 		$select = new UsersModel(); 
 		
-		$retour = $select->selectUser(17);
+		$retour = $select->selectUser($id);
 		print_r($retour);
-		die();
-		$this->show('default/home');
+		$this->show('default/profil');
 	}
 
 //update USER
