@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Sam 11 Février 2017 à 18:56
+-- Généré le :  Mar 14 Février 2017 à 11:45
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.23
 
@@ -122,22 +122,22 @@ CREATE TABLE `places` (
 
 INSERT INTO `places` (`pl_id`, `pl_name`, `pl_tel`, `pl_address`, `pl_city`, `pl_district`, `pl_website`, `pl_instagram`, `pl_picture`, `users_us_id`) VALUES
 (1, 'Café test', '2458745896', 'test test', 'Paris', '14', 'http://test.fr', '@test', 'cheminimage', 1),
-(8, 'Season', '+33 (0)9 67 17 52 97', '1 rue Dupuis', 'Paris', '75003', 'https://www.season-paris.com/', '@seasonparis', 'cheminImage', 1),
-(9, 'Wild and the Moon', '+33 (0)9 51 80 22 33', '55 rue Charlot', 'Paris', '75003', 'http://www.wildandthemoon.com/', '@wildandthemoon', 'cheminimage', 1),
-(38, 'Chambelland', '+33 (0)1 43 55 07 30', '14 rue ternaux', 'Paris', '75011', 'http://chambelland.com/', '@chambellandboulangerie\r\n', NULL, 1),
-(39, 'Café Oberkampf', '+33 (0)1 43 55 60 10', '3 Rue Neuve Popincourt', 'Paris', '75011', 'http://www.cafeoberkampf.com/', '@cafeoberkampf\r\n', NULL, 1),
-(40, 'Ob-La-Di café', '', '54 Rue de Saintonge', 'Paris', '75003', NULL, '@obladicafe\r\n', NULL, 1),
-(41, 'Café Kitsuné', '+33 (0)1 40 15 62 31', '51, Galerie Montpensier', 'Paris', '75001', 'https://shop.kitsune.fr/stores', '@cafekitsune', NULL, 1),
-(42, 'Holybelly', '', '19 rue Lucien Sampaix', 'Paris', '75010', 'http://holybel.ly/', '@holybellycafe\r\n', NULL, 1),
-(43, 'Ellsworth', '+33 (0)1 42 60 59 66', '34, rue de Richelieu', 'Paris', '75001', 'http://www.ellsworthparis.com/', '@ellsworth.paris\r\n', NULL, 1),
-(44, 'Rose Bakery', '', '46 rue des Martyrs', 'Paris', '75009', 'http://www.rosebakery.fr/', '@rosebakeryparis', NULL, 1),
-(45, 'Claus ', '+33 (0)1 42 33 55 10', '14-15 Rue Jean-Jacques Rousseau', 'Paris', '75001', 'http://www.clausparis.com/', '@clauspetitdejeuner', NULL, 1),
-(46, 'Paperboy Café', '+33 (0)1 43 38 12 13', '137 Rue Amelot', 'Paris', '75011', NULL, '@paperboyparis', NULL, 1),
-(47, 'Café Pinson', '+33 (0)1 45 23 59 42', '58 rue du faubourg ', 'Paris', '75010', 'http://www.cafepinson.fr/home/', '@cafepinson', NULL, 1),
-(48, 'Soul Kitchen', '+33 (0)1 71 37 99 95', '33 Rue Lamarck', 'Paris', '75018', NULL, '@soulkitchenparis', NULL, 1),
-(49, 'Lockwood', '+33 (0)1 77 32 97 21', '73 Rue d''Aboukir', 'Paris', '75002', 'http://www.lockwoodparis.com/bar/', '@lockwoodparis', NULL, 1),
-(50, 'Broken Biscuits', '', '10 Passage Rochebrune', 'Paris', '75011', NULL, '@broken_biscuits_paris', NULL, 1),
-(51, 'La Guinguette d''Angèle', '', '2 rue du Général Renault', 'Paris', '75011', 'https://laguinguettedangele.com/', '@laguinguettedangele', NULL, 1);
+(8, 'Season', '+33', '1', 'Paris', '75003', 'https://www.season-paris.com/', '@seasonparis', 'upload/1486996336.jpg', 1),
+(9, 'Wild', '+33', '55', 'Paris', '75003', 'http://www.wildandthemoon.com/', '@wildandthemoon', 'upload/1486996371.jpg', 1),
+(38, 'Chambelland', '+33', '14', 'Paris', '75011', 'http://chambelland.com/', '@chambellandboulangerie', 'upload/1486996422.jpg', 1),
+(39, 'Café', '+33', '3', 'Paris', '75011', 'http://www.cafeoberkampf.com/', '@cafeoberkampf', 'upload/1486996438.jpg', 1),
+(40, 'Ob-La-Di', '', '54', 'Paris', '75003', '', '@obladicafe', 'upload/1486996451.jpg', 1),
+(41, 'Café', '+33', '51,', 'Paris', '75001', 'https://shop.kitsune.fr/stores', '@cafekitsune', 'upload/1486996499.jpg', 1),
+(42, 'Holybelly', '', '19', 'Paris', '75010', 'http://holybel.ly/', '@holybellycafe', 'upload/1486996544.jpg', 1),
+(43, 'Ellsworth', '+33', '34,', 'Paris', '75001', 'http://www.ellsworthparis.com/', '@ellsworth.paris', 'upload/1486996561.jpg', 1),
+(44, 'Rose', '', '46', 'Paris', '75009', 'http://www.rosebakery.fr/', '@rosebakeryparis', 'upload/1486996577.jpg', 1),
+(45, 'Claus', '+33', '14-15', 'Paris', '75001', 'http://www.clausparis.com/', '@clauspetitdejeuner', 'upload/1486996645.jpg', 1),
+(46, 'Paperboy', '+33', '137', 'Paris', '75011', '', '@paperboyparis', 'upload/1486996665.jpg', 1),
+(47, 'Café', '+33', '58', 'Paris', '75010', 'http://www.cafepinson.fr/home/', '@cafepinson', 'upload/1486996674.jpg', 1),
+(48, 'Soul', '+33', '33', 'Paris', '75018', '', '@soulkitchenparis', 'upload/1486996685.jpg', 1),
+(49, 'Lockwood', '+33', '73', 'Paris', '75002', 'http://www.lockwoodparis.com/bar/', '@lockwoodparis', 'upload/1486996703.jpg', 1),
+(50, 'Broken', '', '10', 'Paris', '75011', '', '@broken_biscuits_paris', 'upload/1486996994.jpg', 1),
+(51, 'La', '', '2', 'Paris', '75011', 'https://laguinguettedangele.com/', '@laguinguettedangele', 'upload/1486997005.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -203,16 +203,16 @@ CREATE TABLE `recipes` (
 
 INSERT INTO `recipes` (`re_id`, `re_name`, `re_picture`) VALUES
 (5, 'recipeTEST', 'testIMGTEST'),
-(6, 'Granola', NULL),
-(7, 'Avocado toast', NULL),
-(8, 'Pancakes', NULL),
-(9, 'Leopard cake', NULL),
-(10, 'Açaï bowl', NULL),
-(11, 'Madeleine', NULL),
-(12, 'Cheesecake', NULL),
-(13, 'Matcha latte', NULL),
-(14, 'Carrot cake', NULL),
-(15, 'Cookies', NULL);
+(6, 'Granola', 'upload/1486997231.jpg'),
+(7, 'Avocado', 'upload/1486997211.jpg'),
+(8, 'Pancakes', 'upload/1486997295.jpg'),
+(9, 'Leopard', 'upload/1486997306.jpg'),
+(10, 'Açaï', 'upload/1486997322.jpg'),
+(11, 'Madeleine', 'upload/1486997334.jpg'),
+(12, 'Cheesecake', 'upload/1486997343.jpg'),
+(13, 'Matcha', 'upload/1486997352.jpg'),
+(14, 'Carrot', 'upload/1486997377.jpg'),
+(15, 'Cookies', 'upload/1486997387.jpg');
 
 -- --------------------------------------------------------
 
@@ -365,7 +365,8 @@ INSERT INTO `users` (`us_id`, `us_name`, `us_firstname`, `us_password`, `us_emai
 (16, 'new', 'test', 'newpdw', 'new@new.com', 'user', '1'),
 (17, 'new', 'test', 'newpdw', 'new2@new.com', 'user', '0'),
 (18, 'new', 'test', 'newpdw', 'new2@new.com', 'user', '1'),
-(20, 'testhash', 'testhash', '$2y$10$6V1HX5f3Qk5Qfb7G4W/bwuxo6llEjWN5OSIpWZtd.p0HbkSmTRPjK', 'new3@hashage.com', 'user', '1');
+(20, 'testhash', 'testhash', '$2y$10$6V1HX5f3Qk5Qfb7G4W/bwuxo6llEjWN5OSIpWZtd.p0HbkSmTRPjK', 'new3@hashage.com', 'user', '1'),
+(21, 'TEST', 'TEST', '$2y$10$UICuOwUOCao/Tuf6WBOboOsX9oVw8mmxrcEUJRXsjYvWzM2LMs7tO', 'TEST@TEST.TEST', 'user', '1');
 
 --
 -- Index pour les tables exportées
@@ -455,7 +456,7 @@ ALTER TABLE `steps`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- Contraintes pour les tables exportées
 --
