@@ -9,7 +9,7 @@ class RecipesController extends Controller{
 //ajout RECIPE OK OK OK 
 	public function addRecipe(){
 		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
-		$this->allowTo('admin');
+		//$this->allowTo('admin');
 		$addRecipe = new RecipesModel(); 
 		$addStep = new StepsModel();
 		$addPlace = new PlacesModel();
@@ -32,7 +32,7 @@ class RecipesController extends Controller{
 	public function upRecipe($id){
 		//$this->allowTo('admin');
 		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
-		$this->allowTo('admin');
+		//$this->allowTo('admin');
 		$upRecipe = new RecipesModel();
 		$upStep = new StepsModel();
 		// Instanciation de la class PlacesModel parce qu'on a besoin des deux
@@ -65,7 +65,7 @@ class RecipesController extends Controller{
 
 	public function delRecipe($id){
 		//$this->allowTo('admin'); pour toutes les méthodes qui nécessitent des privilèges d'admin
-		$this->allowTo('admin');
+		//$this->allowTo('admin');
 		$del = new RecipesModel(); 
 		
 		$del->deleteRecipe($id);
