@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="Cook Mix" content="">
+    <meta name="description" content="">
     <meta name="author" content="">
     <title>Cook and mix</title>
     <!-- Bootstrap Core CSS -->
@@ -19,36 +19,21 @@
     <!-- Default Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,500,700,800,900' rel='stylesheet' type='text/css'>
-    <!-- Modern Style Fonts (Include these is you are using body.modern!) -->
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
-    <!-- Vintage Style Fonts (Include these if you are using body.vintage!) -->
-    <link href='http://fonts.googleapis.com/css?family=Sanchez:400italic,400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
-    <!-- Plugin CSS -->
-    <link href=<?= $this->assetUrl('css/plugins/owl-carousel/owl.carousel.css')?> rel="stylesheet" type="text/css">
-    <link href=<?= $this->assetUrl('css/plugins/owl-carousel/owl.theme.css')?> rel="stylesheet" type="text/css">
-    <link href=<?= $this->assetUrl('css/plugins/owl-carousel/owl.transitions.css')?> rel="stylesheet" type="text/css">
+     <!-- Plugin CSS -->
+    <link href=<?= $this->assetUrl('css/vitality-turquoise.css')?> rel="stylesheet" type="text/css"> 
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link href=<?= $this->assetUrl('css/plugins/magnific-popup.css')?> rel="stylesheet" type="text/css">
     <link href=<?= $this->assetUrl('css/plugins/background.css')?> rel="stylesheet" type="text/css">
     <link href=<?= $this->assetUrl('css/plugins/animate.css')?> rel="stylesheet" type="text/css">
     
-    <link href=<?= $this->assetUrl('css/vitality-turquoise.css')?> rel="stylesheet" type="text/css">
-    
-    <link rel="stylesheet" href=<?= $this->assetUrl('js/plugins/jquery-modal-master/jquery.modal.css')?> type="text/css" media="screen" />
-    
-
     <!-- IE8 support for HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
-<!-- Alternate Body Classes: .modern and .vintage -->
 
 <body id="page-top">
-    <!-- Navigation -->
-    <!-- Note: navbar-default and navbar-inverse are both supported with this theme. -->
     <nav class="navbar navbar-inverse navbar-fixed-top navbar-expanded">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -141,7 +126,8 @@
     
         </div>
        
-        
+<!--FenÃªtre modal d'inscription Ã  la newsletter-->
+               
         <div id="myModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -165,6 +151,8 @@
             </div>
         </div>     
     </header>
+    
+    
     <section>
         <div class="container text-center wow fadeIn">
             <div class="row content-row">
@@ -172,20 +160,10 @@
                     <div class="portfolio-filter">
                         <ul id="filters" class="clearfix">
                             <li>
-                            <div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Recettes<span class="caret"></span>
-                            </button>
-                              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="">Recette 1 </a></li>
-                                <li><a href="">Recette 2</a></li>
-                                <li><a href="">Recette 3</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="">Separated link</a></li>
-                              </ul>
-                            </div>
+                            <input id="recherche" class="form-control" name="Recette" data-provide="typehead">
                             </li>
                             <li>
-                                <span class="filter active" data-filter="identity graphic logo web">Restaurants</span>
+                                <span class="filter" data-filter="identity graphic logo web">Restaurants</span>
                             </li>
                             <li>
                                 <span class="filter" data-filter="graphic">Testez</span>
@@ -315,6 +293,9 @@
             </div>
         </div>
     </footer>
+    
+    
+    
     <!-- Example Modal 2 -->
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true" style="background-image: url('assets/img/creative/portfolio/bg-2.jpg')">
         <div class="modal-content">
@@ -411,6 +392,9 @@ Le restaurant Le Jules est ouvert tous les jours du lundi au dimanche, de 8h30 Ã
             </div>
         </div>
     </div>
+    
+    
+    
     <!-- Example Modal 4 -->
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true" style="background-image: url('assets/img/creative/portfolio/bg-4.jpg')">
         <div class="modal-content">
@@ -454,10 +438,18 @@ Le restaurant Le Jules est ouvert tous les jours du lundi au dimanche, de 8h30 Ã
             </div>
         </div>
     </div>
+    
+
+    
+            
+
+    
+    
     <!-- Core Scripts -->
     <script src=<?= $this->assetUrl('js/jquery.js')?>></script>
     <script src=<?= $this->assetUrl('js/bootstrap/bootstrap.min.js')?>></script>
     <!-- Plugin Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src=<?= $this->assetUrl('js/plugins/jquery.easing.min.js')?>></script>
     <script src=<?= $this->assetUrl('js/plugins/classie.js')?>></script>
     <script src=<?= $this->assetUrl('js/plugins/cbpAnimatedHeader.js')?>></script>
@@ -474,10 +466,9 @@ Le restaurant Le Jules est ouvert tous les jours du lundi au dimanche, de 8h30 Ã
     <script src=<?= $this->assetUrl('js/vitality.js')?>></script>
     <!--Pop up newsletter-->
     <script language="javascript" src=<?= $this->assetUrl('http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js')?> type="text/javascript"></script>
-        
-    
-
    
+   
+   <!--Script permettant l'affichage de la newsletter-->
     <script type="text/javascript">
     $(document).ready(function(){
             var theCookie = document.cookie.split(';');
@@ -489,11 +480,14 @@ Le restaurant Le Jules est ouvert tous les jours du lundi au dimanche, de 8h30 Ã
                 }
     });
     </script>
- 
-
-   
-
+    
+    <script>
+    
+    $('#recherche').autocomplete({
+        source: 'recipes.php'
+    });
         
+    </script>    
 </body>
 
 </html>
